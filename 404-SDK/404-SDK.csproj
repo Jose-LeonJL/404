@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>_404_SDK</RootNamespace>
+    <RootNamespace>DVStudio.SDK</RootNamespace>
   </PropertyGroup>
 
 </Project>
