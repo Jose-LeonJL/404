@@ -8,9 +8,9 @@ namespace DVStudio.SDK
         private Inventario _Inventario;
         private Usuarios _usuarios;
         private Ventas _ventas;
-        private Login _login;
+        private static Login _login = new Login(URL_base);
         public Inventario inventario {
-            get {
+            get{
                 return this._Inventario;
             }
         }
@@ -28,12 +28,9 @@ namespace DVStudio.SDK
                 return this._ventas;
             }
         }
-        public Login login
+        public static Login login
         {
-            get
-            {
-                return this._login;
-            }
+            get;
         }
         public SDK_()
         {

@@ -11,23 +11,32 @@ namespace DVStudio.SDK.clases
 {
     public class Login
     {
-        private string URL_base, access_token;
-        private HttpClient httpClient;
-        public Login(string URl_base, string access_token)
+        private static string URL_base, access_token;
+        private static HttpClient httpClient;
+        public Login(string URl_base)
         {
-            this.httpClient = new HttpClient();
-            this.URL_base = URl_base;
-            this.access_token = access_token;
+            httpClient = new HttpClient();
+            URL_base = URl_base;
         }
-        public async Task create_Login(Struct_Login Login)
+        public static async Task create_Login(Struct_Login Login)
         {
-            httpClient.BaseAddress = new Uri(URL_base);
-            httpClient.DefaultRequestHeaders.Add("x-access-token", access_token);
-            StringContent body = new StringContent(JsonSerializer.Serialize(Login), System.Text.Encoding.UTF8, "application/json");
-            var response = await httpClient.PostAsync("/Login", body);
-            var contenido = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(contenido);
-            //Console.WriteLine(Login.);
+            try
+            {
+                httpClient.BaseAddress = new Uri(URL_base);
+                StringContent body = new StringContent(JsonSerializer.Serialize(Login), System.Text.Encoding.UTF8, "application/json");
+                var response = await httpClient.PostAsync("/Login", body);
+                var contenido = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(contenido);
+                //Console.WriteLine(Login.);
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        public static void xd()
+        {
+
         }
     }
 }
