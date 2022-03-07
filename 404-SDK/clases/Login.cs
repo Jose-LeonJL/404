@@ -24,7 +24,6 @@ namespace DVStudio.SDK.clases
                 StringContent body = new StringContent(JsonSerializer.Serialize(Login), System.Text.Encoding.UTF8, "application/json");
                 var response = await httpClient.PostAsync("/Login", body);
                 var contenido = await response.Content.ReadAsStringAsync();
-                Console.InputEncoding = Encoding.UTF8;
                 Console.WriteLine(JsonSerializer.Serialize(contenido));
                 //Console.WriteLine(Login.);
             }
