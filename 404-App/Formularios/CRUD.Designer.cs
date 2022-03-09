@@ -29,14 +29,11 @@ namespace _404_App.Formularios
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PnShow = new System.Windows.Forms.Panel();
-            this.BtnCrear = new Guna.UI.WinForms.GunaButton();
-            this.BtnActualizar = new Guna.UI.WinForms.GunaButton();
-            this.BtnEliminar = new Guna.UI.WinForms.GunaButton();
-            this.BtnReporte = new Guna.UI.WinForms.GunaButton();
+            this.LblUserNickName = new System.Windows.Forms.Label();
             this.tabla = new Guna.UI.WinForms.GunaDataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,16 +45,22 @@ namespace _404_App.Formularios
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LblUserNickName = new System.Windows.Forms.Label();
-            this.TxtBuscar = new Guna.UI.WinForms.GunaTextBox();
+            this.BtnReporte = new Guna.UI.WinForms.GunaButton();
+            this.BtnEliminar = new Guna.UI.WinForms.GunaButton();
+            this.BtnActualizar = new Guna.UI.WinForms.GunaButton();
+            this.BtnCrear = new Guna.UI.WinForms.GunaButton();
+            this.txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnShow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PnShow
             // 
             this.PnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(122)))), ((int)(((byte)(131)))));
-            this.PnShow.Controls.Add(this.TxtBuscar);
+            this.PnShow.Controls.Add(this.pictureBox1);
+            this.PnShow.Controls.Add(this.txtbuscar);
             this.PnShow.Controls.Add(this.LblUserNickName);
             this.PnShow.Controls.Add(this.tabla);
             this.PnShow.Controls.Add(this.BtnReporte);
@@ -72,139 +75,34 @@ namespace _404_App.Formularios
             this.PnShow.Size = new System.Drawing.Size(1100, 781);
             this.PnShow.TabIndex = 3;
             // 
-            // BtnCrear
+            // LblUserNickName
             // 
-            this.BtnCrear.Animated = true;
-            this.BtnCrear.AnimationHoverSpeed = 0.07F;
-            this.BtnCrear.AnimationSpeed = 0.03F;
-            this.BtnCrear.BackColor = System.Drawing.Color.Transparent;
-            this.BtnCrear.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(158)))), ((int)(((byte)(57)))));
-            this.BtnCrear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(38)))));
-            this.BtnCrear.BorderSize = 3;
-            this.BtnCrear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCrear.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.BtnCrear.FocusedColor = System.Drawing.Color.Empty;
-            this.BtnCrear.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCrear.ForeColor = System.Drawing.Color.Black;
-            this.BtnCrear.Image = null;
-            this.BtnCrear.ImageSize = new System.Drawing.Size(40, 40);
-            this.BtnCrear.Location = new System.Drawing.Point(12, 713);
-            this.BtnCrear.Name = "BtnCrear";
-            this.BtnCrear.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.BtnCrear.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.BtnCrear.OnHoverForeColor = System.Drawing.Color.White;
-            this.BtnCrear.OnHoverImage = null;
-            this.BtnCrear.OnPressedColor = System.Drawing.Color.Black;
-            this.BtnCrear.Radius = 10;
-            this.BtnCrear.Size = new System.Drawing.Size(171, 56);
-            this.BtnCrear.TabIndex = 3;
-            this.BtnCrear.Text = "Crear";
-            this.BtnCrear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // BtnActualizar
-            // 
-            this.BtnActualizar.Animated = true;
-            this.BtnActualizar.AnimationHoverSpeed = 0.07F;
-            this.BtnActualizar.AnimationSpeed = 0.03F;
-            this.BtnActualizar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnActualizar.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.BtnActualizar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(59)))), ((int)(((byte)(62)))));
-            this.BtnActualizar.BorderSize = 3;
-            this.BtnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnActualizar.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.BtnActualizar.FocusedColor = System.Drawing.Color.Empty;
-            this.BtnActualizar.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnActualizar.ForeColor = System.Drawing.Color.Black;
-            this.BtnActualizar.Image = null;
-            this.BtnActualizar.ImageSize = new System.Drawing.Size(40, 40);
-            this.BtnActualizar.Location = new System.Drawing.Point(313, 713);
-            this.BtnActualizar.Name = "BtnActualizar";
-            this.BtnActualizar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.BtnActualizar.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.BtnActualizar.OnHoverForeColor = System.Drawing.Color.White;
-            this.BtnActualizar.OnHoverImage = null;
-            this.BtnActualizar.OnPressedColor = System.Drawing.Color.Black;
-            this.BtnActualizar.Radius = 10;
-            this.BtnActualizar.Size = new System.Drawing.Size(171, 56);
-            this.BtnActualizar.TabIndex = 4;
-            this.BtnActualizar.Text = "Actualizar";
-            this.BtnActualizar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // BtnEliminar
-            // 
-            this.BtnEliminar.Animated = true;
-            this.BtnEliminar.AnimationHoverSpeed = 0.07F;
-            this.BtnEliminar.AnimationSpeed = 0.03F;
-            this.BtnEliminar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnEliminar.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
-            this.BtnEliminar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.BtnEliminar.BorderSize = 3;
-            this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEliminar.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.BtnEliminar.FocusedColor = System.Drawing.Color.Empty;
-            this.BtnEliminar.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEliminar.ForeColor = System.Drawing.Color.Black;
-            this.BtnEliminar.Image = null;
-            this.BtnEliminar.ImageSize = new System.Drawing.Size(40, 40);
-            this.BtnEliminar.Location = new System.Drawing.Point(614, 713);
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.BtnEliminar.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.BtnEliminar.OnHoverForeColor = System.Drawing.Color.White;
-            this.BtnEliminar.OnHoverImage = null;
-            this.BtnEliminar.OnPressedColor = System.Drawing.Color.Black;
-            this.BtnEliminar.Radius = 10;
-            this.BtnEliminar.Size = new System.Drawing.Size(171, 56);
-            this.BtnEliminar.TabIndex = 5;
-            this.BtnEliminar.Text = "Eliminar";
-            this.BtnEliminar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // BtnReporte
-            // 
-            this.BtnReporte.Animated = true;
-            this.BtnReporte.AnimationHoverSpeed = 0.07F;
-            this.BtnReporte.AnimationSpeed = 0.03F;
-            this.BtnReporte.BackColor = System.Drawing.Color.Transparent;
-            this.BtnReporte.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(181)))), ((int)(((byte)(189)))));
-            this.BtnReporte.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(63)))));
-            this.BtnReporte.BorderSize = 3;
-            this.BtnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnReporte.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.BtnReporte.FocusedColor = System.Drawing.Color.Empty;
-            this.BtnReporte.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReporte.ForeColor = System.Drawing.Color.Black;
-            this.BtnReporte.Image = null;
-            this.BtnReporte.ImageSize = new System.Drawing.Size(40, 40);
-            this.BtnReporte.Location = new System.Drawing.Point(915, 713);
-            this.BtnReporte.Name = "BtnReporte";
-            this.BtnReporte.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.BtnReporte.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.BtnReporte.OnHoverForeColor = System.Drawing.Color.White;
-            this.BtnReporte.OnHoverImage = null;
-            this.BtnReporte.OnPressedColor = System.Drawing.Color.Black;
-            this.BtnReporte.Radius = 10;
-            this.BtnReporte.Size = new System.Drawing.Size(171, 56);
-            this.BtnReporte.TabIndex = 6;
-            this.BtnReporte.Text = "Reporte";
-            this.BtnReporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.LblUserNickName.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUserNickName.ForeColor = System.Drawing.Color.Black;
+            this.LblUserNickName.Location = new System.Drawing.Point(408, 31);
+            this.LblUserNickName.Name = "LblUserNickName";
+            this.LblUserNickName.Size = new System.Drawing.Size(238, 23);
+            this.LblUserNickName.TabIndex = 8;
+            this.LblUserNickName.Text = "Title";
+            this.LblUserNickName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabla
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.tabla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.tabla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tabla.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(81)))), ((int)(((byte)(87)))));
             this.tabla.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tabla.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            this.tabla.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tabla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
@@ -216,14 +114,14 @@ namespace _404_App.Formularios
             this.Column8,
             this.Column9,
             this.Column10});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tabla.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tabla.DefaultCellStyle = dataGridViewCellStyle6;
             this.tabla.EnableHeadersVisualStyles = false;
             this.tabla.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tabla.Location = new System.Drawing.Point(12, 185);
@@ -305,36 +203,158 @@ namespace _404_App.Formularios
             this.Column10.HeaderText = "Column10";
             this.Column10.Name = "Column10";
             // 
-            // LblUserNickName
+            // BtnReporte
             // 
-            this.LblUserNickName.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUserNickName.ForeColor = System.Drawing.Color.Black;
-            this.LblUserNickName.Location = new System.Drawing.Point(408, 31);
-            this.LblUserNickName.Name = "LblUserNickName";
-            this.LblUserNickName.Size = new System.Drawing.Size(238, 23);
-            this.LblUserNickName.TabIndex = 8;
-            this.LblUserNickName.Text = "Title";
-            this.LblUserNickName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtnReporte.Animated = true;
+            this.BtnReporte.AnimationHoverSpeed = 0.07F;
+            this.BtnReporte.AnimationSpeed = 0.03F;
+            this.BtnReporte.BackColor = System.Drawing.Color.Transparent;
+            this.BtnReporte.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(181)))), ((int)(((byte)(189)))));
+            this.BtnReporte.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(60)))), ((int)(((byte)(63)))));
+            this.BtnReporte.BorderSize = 3;
+            this.BtnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnReporte.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BtnReporte.FocusedColor = System.Drawing.Color.Empty;
+            this.BtnReporte.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReporte.ForeColor = System.Drawing.Color.Black;
+            this.BtnReporte.Image = null;
+            this.BtnReporte.ImageSize = new System.Drawing.Size(40, 40);
+            this.BtnReporte.Location = new System.Drawing.Point(915, 713);
+            this.BtnReporte.Name = "BtnReporte";
+            this.BtnReporte.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.BtnReporte.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.BtnReporte.OnHoverForeColor = System.Drawing.Color.White;
+            this.BtnReporte.OnHoverImage = null;
+            this.BtnReporte.OnPressedColor = System.Drawing.Color.Black;
+            this.BtnReporte.Radius = 10;
+            this.BtnReporte.Size = new System.Drawing.Size(171, 56);
+            this.BtnReporte.TabIndex = 6;
+            this.BtnReporte.Text = "Reporte";
+            this.BtnReporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TxtBuscar
+            // BtnEliminar
             // 
-            this.TxtBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.TxtBuscar.BaseColor = System.Drawing.Color.White;
-            this.TxtBuscar.BorderColor = System.Drawing.Color.Black;
-            this.TxtBuscar.BorderSize = 3;
-            this.TxtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtBuscar.FocusedBaseColor = System.Drawing.Color.White;
-            this.TxtBuscar.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.TxtBuscar.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.TxtBuscar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBuscar.ForeColor = System.Drawing.Color.Black;
-            this.TxtBuscar.Location = new System.Drawing.Point(680, 118);
-            this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.PasswordChar = '\0';
-            this.TxtBuscar.SelectedText = "";
-            this.TxtBuscar.Size = new System.Drawing.Size(160, 30);
-            this.TxtBuscar.TabIndex = 9;
-            this.TxtBuscar.Text = "Buscar";
+            this.BtnEliminar.Animated = true;
+            this.BtnEliminar.AnimationHoverSpeed = 0.07F;
+            this.BtnEliminar.AnimationSpeed = 0.03F;
+            this.BtnEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.BtnEliminar.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.BtnEliminar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.BtnEliminar.BorderSize = 3;
+            this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnEliminar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BtnEliminar.FocusedColor = System.Drawing.Color.Empty;
+            this.BtnEliminar.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEliminar.ForeColor = System.Drawing.Color.Black;
+            this.BtnEliminar.Image = null;
+            this.BtnEliminar.ImageSize = new System.Drawing.Size(40, 40);
+            this.BtnEliminar.Location = new System.Drawing.Point(614, 713);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.BtnEliminar.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.BtnEliminar.OnHoverForeColor = System.Drawing.Color.White;
+            this.BtnEliminar.OnHoverImage = null;
+            this.BtnEliminar.OnPressedColor = System.Drawing.Color.Black;
+            this.BtnEliminar.Radius = 10;
+            this.BtnEliminar.Size = new System.Drawing.Size(171, 56);
+            this.BtnEliminar.TabIndex = 5;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // BtnActualizar
+            // 
+            this.BtnActualizar.Animated = true;
+            this.BtnActualizar.AnimationHoverSpeed = 0.07F;
+            this.BtnActualizar.AnimationSpeed = 0.03F;
+            this.BtnActualizar.BackColor = System.Drawing.Color.Transparent;
+            this.BtnActualizar.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.BtnActualizar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(59)))), ((int)(((byte)(62)))));
+            this.BtnActualizar.BorderSize = 3;
+            this.BtnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnActualizar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BtnActualizar.FocusedColor = System.Drawing.Color.Empty;
+            this.BtnActualizar.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnActualizar.ForeColor = System.Drawing.Color.Black;
+            this.BtnActualizar.Image = null;
+            this.BtnActualizar.ImageSize = new System.Drawing.Size(40, 40);
+            this.BtnActualizar.Location = new System.Drawing.Point(313, 713);
+            this.BtnActualizar.Name = "BtnActualizar";
+            this.BtnActualizar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.BtnActualizar.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.BtnActualizar.OnHoverForeColor = System.Drawing.Color.White;
+            this.BtnActualizar.OnHoverImage = null;
+            this.BtnActualizar.OnPressedColor = System.Drawing.Color.Black;
+            this.BtnActualizar.Radius = 10;
+            this.BtnActualizar.Size = new System.Drawing.Size(171, 56);
+            this.BtnActualizar.TabIndex = 4;
+            this.BtnActualizar.Text = "Actualizar";
+            this.BtnActualizar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // BtnCrear
+            // 
+            this.BtnCrear.Animated = true;
+            this.BtnCrear.AnimationHoverSpeed = 0.07F;
+            this.BtnCrear.AnimationSpeed = 0.03F;
+            this.BtnCrear.BackColor = System.Drawing.Color.Transparent;
+            this.BtnCrear.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(158)))), ((int)(((byte)(57)))));
+            this.BtnCrear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(105)))), ((int)(((byte)(38)))));
+            this.BtnCrear.BorderSize = 3;
+            this.BtnCrear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCrear.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BtnCrear.FocusedColor = System.Drawing.Color.Empty;
+            this.BtnCrear.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCrear.ForeColor = System.Drawing.Color.Black;
+            this.BtnCrear.Image = null;
+            this.BtnCrear.ImageSize = new System.Drawing.Size(40, 40);
+            this.BtnCrear.Location = new System.Drawing.Point(12, 713);
+            this.BtnCrear.Name = "BtnCrear";
+            this.BtnCrear.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.BtnCrear.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.BtnCrear.OnHoverForeColor = System.Drawing.Color.White;
+            this.BtnCrear.OnHoverImage = null;
+            this.BtnCrear.OnPressedColor = System.Drawing.Color.Black;
+            this.BtnCrear.Radius = 10;
+            this.BtnCrear.Size = new System.Drawing.Size(171, 56);
+            this.BtnCrear.TabIndex = 3;
+            this.BtnCrear.Text = "Crear";
+            this.BtnCrear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtbuscar
+            // 
+            this.txtbuscar.Animated = true;
+            this.txtbuscar.BorderThickness = 3;
+            this.txtbuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbuscar.DefaultText = "Buscar";
+            this.txtbuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbuscar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbuscar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(122)))), ((int)(((byte)(131)))));
+            this.txtbuscar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbuscar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbuscar.ForeColor = System.Drawing.Color.Black;
+            this.txtbuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbuscar.Location = new System.Drawing.Point(797, 110);
+            this.txtbuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.PasswordChar = '\0';
+            this.txtbuscar.PlaceholderText = "";
+            this.txtbuscar.SelectedText = "";
+            this.txtbuscar.Size = new System.Drawing.Size(229, 43);
+            this.txtbuscar.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtbuscar.TabIndex = 10;
+            this.txtbuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::_404_App.Properties.Resources.icons8_search_100px;
+            this.pictureBox1.Location = new System.Drawing.Point(1032, 113);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // CRUD
             // 
@@ -347,6 +367,7 @@ namespace _404_App.Formularios
             this.Text = "CRUD";
             this.PnShow.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -369,7 +390,8 @@ namespace _404_App.Formularios
         private Guna.UI.WinForms.GunaButton BtnEliminar;
         private Guna.UI.WinForms.GunaButton BtnActualizar;
         private Guna.UI.WinForms.GunaButton BtnCrear;
-        private Guna.UI.WinForms.GunaTextBox TxtBuscar;
         private System.Windows.Forms.Label LblUserNickName;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtbuscar;
     }
 }

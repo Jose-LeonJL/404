@@ -9,13 +9,16 @@ using System.Windows.Forms;
 
 namespace _404_App.Formularios
 {
-    public partial class CRUD : Form
+    public partial class login : Form
     {
-        public CRUD()
+        public login()
         {
             InitializeComponent();
         }
 
-  
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
