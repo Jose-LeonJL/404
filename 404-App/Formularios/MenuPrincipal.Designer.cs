@@ -30,7 +30,7 @@ namespace _404_App.Formularios
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PnBar = new System.Windows.Forms.Panel();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.BtnCerrar = new FontAwesome.Sharp.IconPictureBox();
             this.PtbIcon = new System.Windows.Forms.PictureBox();
@@ -46,7 +46,7 @@ namespace _404_App.Formularios
             this.LblUserNickName = new System.Windows.Forms.Label();
             this.PnShow = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
+            this.PnBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PtbIcon)).BeginInit();
@@ -56,17 +56,18 @@ namespace _404_App.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // PnBar
             // 
-            this.panel1.Controls.Add(this.iconPictureBox2);
-            this.panel1.Controls.Add(this.BtnCerrar);
-            this.panel1.Controls.Add(this.PtbIcon);
-            this.panel1.Controls.Add(this.lblTitle);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1338, 32);
-            this.panel1.TabIndex = 0;
+            this.PnBar.Controls.Add(this.iconPictureBox2);
+            this.PnBar.Controls.Add(this.BtnCerrar);
+            this.PnBar.Controls.Add(this.PtbIcon);
+            this.PnBar.Controls.Add(this.lblTitle);
+            this.PnBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PnBar.Location = new System.Drawing.Point(0, 0);
+            this.PnBar.Name = "PnBar";
+            this.PnBar.Size = new System.Drawing.Size(1338, 32);
+            this.PnBar.TabIndex = 0;
+            this.PnBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PnBar_MouseMove);
             // 
             // iconPictureBox2
             // 
@@ -111,6 +112,7 @@ namespace _404_App.Formularios
             this.PtbIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PtbIcon.TabIndex = 6;
             this.PtbIcon.TabStop = false;
+            this.PtbIcon.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PtbIcon_MouseMove);
             // 
             // lblTitle
             // 
@@ -121,6 +123,7 @@ namespace _404_App.Formularios
             this.lblTitle.Size = new System.Drawing.Size(104, 18);
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "MenuPrincipal";
+            this.lblTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblTitle_MouseMove);
             // 
             // panel2
             // 
@@ -331,14 +334,14 @@ namespace _404_App.Formularios
             this.ClientSize = new System.Drawing.Size(1338, 813);
             this.Controls.Add(this.PnShow);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PnBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipal";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.PnBar.ResumeLayout(false);
+            this.PnBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PtbIcon)).EndInit();
@@ -353,7 +356,7 @@ namespace _404_App.Formularios
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PnBar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel PnShow;
         private Guna.UI.WinForms.GunaButton BtnVentas;
