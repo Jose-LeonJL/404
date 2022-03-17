@@ -38,5 +38,12 @@ namespace _404_App.Formularios
             ReleaseCapture();
             SendMessage(Handle, 0x112, 0xF012, 0);
         }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            Formularios.MenuPrincipal menu = new Formularios.MenuPrincipal();
+            menu.Show();
+            this.Hide();
+        }
     }
 }

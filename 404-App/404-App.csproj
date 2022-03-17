@@ -33,13 +33,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CircularProgressBar">
-      <HintPath>..\..\..\..\..\..\Descargas\Telegram Desktop\CircularProgressBar.dll</HintPath>
+      <HintPath>..\..\SUANY GARCIA\xd\CircularProgressBar.dll</HintPath>
     </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net40\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
-      <HintPath>..\..\..\..\..\..\Descargas\Telegram Desktop\Guna.UI.dll</HintPath>
+      <HintPath>..\..\SUANY GARCIA\xd\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2, Version=2.0.3.1, Culture=neutral, PublicKeyToken=e4b9cdd7b4cde4b4, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.1\lib\net40\Guna.UI2.dll</HintPath>
@@ -61,7 +61,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
     <Reference Include="WinFormAnimation">
-      <HintPath>..\..\..\..\..\..\Descargas\Telegram Desktop\WinFormAnimation.dll</HintPath>
+      <HintPath>..\..\SUANY GARCIA\xd\WinFormAnimation.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
