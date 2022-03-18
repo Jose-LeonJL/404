@@ -6,8 +6,8 @@ namespace DVStudio.SDK.Estructuras
 {
     public struct Struct_Cliente
     {
-        public string Codigo;
-        public string Identidad;
-        public string Telefono;
+        public string Codigo { get; set; }
+        public string Identidad { get; set; }
+        public string Telefono { get; set; }
     }
 }
