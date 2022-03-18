@@ -94,5 +94,83 @@ namespace DVStudio.SDK.clases
             }
             return Obtener_;
         }
+        public static async Task<Response_General> Update_Ventas(Struct_Ventas Ventas, string token, string id)
+        {
+            Response_General Update_ = null;
+
+            try
+            {
+                httpClient = new HttpClient();
+                httpClient.BaseAddress = new Uri(URL_base);
+                //httpClient.DefaultRequestHeaders.Add("Content-Type", "application/json; charset=utf-8");
+                httpClient.DefaultRequestHeaders.Add("x-access-token", token);
+                StringContent body = new StringContent(JsonSerializer.Serialize(new { id = id, data = Ventas }), System.Text.Encoding.UTF8, "application/json");
+                var response = await httpClient.PutAsync("/Ventas", body);
+                var contenido = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(contenido);
+                Console.WriteLine(Ventas.Fecha);
+
+                Update_ = JsonSerializer.Deserialize<Response_General>(contenido);
+                if (Update_.status == "error")
+                {
+                    Exception2 ex2 = JsonSerializer.Deserialize<Exception2>(contenido);
+                    ExceptionsResponse x2 = new ExceptionsResponse() { status = ex2.status, code = ex2.code, data = new ExceptionsResponse.Data { error = ex2.data.error } };
+                    Console.WriteLine(x2.status);
+                    throw x2;
+                }
+                else if (Update_ == null)
+                {
+                    throw new ExceptionsResponse() { status = "error", code = 404, data = new ExceptionsResponse.Data { error = "solicitud nula" } };
+                }
+                Console.WriteLine(Update_.status);
+            }
+            catch (ExceptionsResponse ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return Update_;
+        }
+        public static async Task<Response_General> Delete_Ventas(string id, string token)
+        {
+            Response_General Delete_ = null;
+            try
+            {
+                httpClient = new HttpClient();
+                httpClient.BaseAddress = new Uri(URL_base);
+                //httpClient.DefaultRequestHeaders.Add("Content-Type", "application/json; charset=utf-8");
+                httpClient.DefaultRequestHeaders.Add("x-access-token", token);
+                var response = await httpClient.DeleteAsync($"/Ventas/{id}");
+                var contenido = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(contenido);
+
+                Delete_ = JsonSerializer.Deserialize<Response_General>(contenido);
+                if (Delete_.status == "error")
+                {
+                    Exception2 ex2 = JsonSerializer.Deserialize<Exception2>(contenido);
+                    ExceptionsResponse x2 = new ExceptionsResponse() { status = ex2.status, code = ex2.code, data = new ExceptionsResponse.Data { error = ex2.data.error } };
+                    Console.WriteLine(x2.status);
+                    throw x2;
+                }
+                else if (Delete_ == null)
+                {
+                    throw new ExceptionsResponse() { status = "error", code = 404, data = new ExceptionsResponse.Data { error = "solicitud nula" } };
+                }
+                Console.WriteLine(Delete_.status);
+            }
+            catch (ExceptionsResponse ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return Delete_;
+        }
     }
 }
