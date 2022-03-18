@@ -26,10 +26,6 @@ namespace DVStudio.SDK.clases
                 StringContent body = new StringContent(JsonSerializer.Serialize(Login), System.Text.Encoding.UTF8, "application/json");
                 var response = await httpClient.PostAsync("/Login", body);
                 var contenido = await response.Content.ReadAsStringAsync();
-<<<<<<< HEAD
-                Console.WriteLine(JsonSerializer.Serialize(contenido));
-                //Console.WriteLine(Login.);
-=======
                 Console.WriteLine(contenido);
                  
              
@@ -51,7 +47,6 @@ namespace DVStudio.SDK.clases
             catch (ExceptionsResponse ex)
             {
                 throw ex;
->>>>>>> 0e37c25351a047389bc7b021e5ef0cb30ecb5005
             }
             catch (Exception ex)
             {
