@@ -67,21 +67,21 @@ namespace DVStudio.SDK.clases
                 StringContent body = new StringContent(JsonSerializer.Serialize(new { Correo = correo }), System.Text.Encoding.UTF8, "application/json");
                 var response = await httpClient.PostAsync("/Login/Recovery", body);
                 var contenido = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(contenido);
+                //Console.WriteLine(contenido);
 
                 _Response = JsonSerializer.Deserialize<Recuperar_Login>(contenido);
                 if (_Response.status == "error")
                 {
                     Exception2 ex2 = JsonSerializer.Deserialize<Exception2>(contenido);
                     ExceptionsResponse x2 = new ExceptionsResponse() { status = ex2.status, code = ex2.code, data = new ExceptionsResponse.Data { error = ex2.data.error } };
-                    Console.WriteLine(x2.status);
+                    //Console.WriteLine(x2.status);
                     throw x2;
                 }
                 else if (_Response == null)
                 {
                     throw new ExceptionsResponse() { status = "error", code = 404, data = new ExceptionsResponse.Data { error = "solicitud nula" } };
                 }
-                Console.WriteLine(_Response.status);
+                //Console.WriteLine(_Response.status);
             }
             catch (ExceptionsResponse ex)
             {
@@ -101,25 +101,25 @@ namespace DVStudio.SDK.clases
             {
                 httpClient = new HttpClient();
                 httpClient.BaseAddress = new Uri(URL_base);
-                Console.WriteLine(JsonSerializer.Serialize(validacion));
+                //Console.WriteLine(JsonSerializer.Serialize(validacion));
                 
                 var response = await httpClient.GetAsync($"/Login/Recovery?code={validacion.code}&correo={validacion.correo}");
                 var contenido = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(contenido);
+                //Console.WriteLine(contenido);
 
                 _Response = JsonSerializer.Deserialize<Validar_Respuesta>(contenido);
                 if (_Response.status == "error")
                 {
                     Exception2 ex2 = JsonSerializer.Deserialize<Exception2>(contenido);
                     ExceptionsResponse x2 = new ExceptionsResponse() { status = ex2.status, code = ex2.code, data = new ExceptionsResponse.Data { error = ex2.data.error } };
-                    Console.WriteLine(x2.status);
+                    //Console.WriteLine(x2.status);
                     throw x2;
                 }
                 else if (_Response == null)
                 {
                     throw new ExceptionsResponse() { status = "error", code = 404, data = new ExceptionsResponse.Data { error = "solicitud nula" } };
                 }
-                Console.WriteLine(_Response.status);
+                //Console.WriteLine(_Response.status);
             }
             catch (ExceptionsResponse ex)
             {
@@ -138,11 +138,11 @@ namespace DVStudio.SDK.clases
             {
                 httpClient = new HttpClient();
                 httpClient.BaseAddress = new Uri(URL_base);
-                Console.WriteLine(JsonSerializer.Serialize(actualizar_));
+                //Console.WriteLine(JsonSerializer.Serialize(actualizar_));
                 StringContent body = new StringContent(JsonSerializer.Serialize(actualizar_), System.Text.Encoding.UTF8, "application/json");
                 var response = await httpClient.PutAsync("/Login/Recovery", body);
                 var contenido = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(contenido);
+                //Console.WriteLine(contenido);
                 
 
                 _Response = JsonSerializer.Deserialize<ActualizarContrasena>(contenido);
@@ -150,14 +150,14 @@ namespace DVStudio.SDK.clases
                 {
                     Exception2 ex2 = JsonSerializer.Deserialize<Exception2>(contenido);
                     ExceptionsResponse x2 = new ExceptionsResponse() { status = ex2.status, code = ex2.code, data = new ExceptionsResponse.Data { error = ex2.data.error } };
-                    Console.WriteLine(x2.status);
+                    //Console.WriteLine(x2.status);
                     throw x2;
                 }
                 else if (_Response == null)
                 {
                     throw new ExceptionsResponse() { status = "error", code = 404, data = new ExceptionsResponse.Data { error = "solicitud nula" } };
                 }
-                Console.WriteLine(_Response.status);
+                //Console.WriteLine(_Response.status);
             }
             catch (ExceptionsResponse ex)
             {

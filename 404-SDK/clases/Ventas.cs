@@ -28,8 +28,8 @@ namespace DVStudio.SDK.clases
                 StringContent body = new StringContent(JsonSerializer.Serialize(Ventas), System.Text.Encoding.UTF8, "application/json");
                 var response = await httpClient.PostAsync("/Ventas", body);
                 var contenido = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(contenido);
-                Console.WriteLine(JsonSerializer.Serialize(Ventas));
+                //Console.WriteLine(contenido);
+                //Console.WriteLine(JsonSerializer.Serialize(Ventas));
 
 
                 response_ = JsonSerializer.Deserialize<Response_General>(contenido);
@@ -37,14 +37,14 @@ namespace DVStudio.SDK.clases
                 {
                     Exception2 ex2 = JsonSerializer.Deserialize<Exception2>(contenido);
                     ExceptionsResponse x2 = new ExceptionsResponse() { status = ex2.status, code = ex2.code, data = new ExceptionsResponse.Data { error = ex2.data.error } };
-                    Console.WriteLine(x2.status);
+                    //Console.WriteLine(x2.status);
                     throw x2;
                 }
                 else if (response_ == null)
                 {
                     throw new ExceptionsResponse() { status = "error", code = 404, data = new ExceptionsResponse.Data { error = "solicitud nula" } };
                 }
-                Console.WriteLine(response_.status);
+                //Console.WriteLine(response_.status);
             }
             catch (ExceptionsResponse ex)
             {
@@ -68,21 +68,21 @@ namespace DVStudio.SDK.clases
                 StringContent body = new StringContent(JsonSerializer.Serialize(token), System.Text.Encoding.UTF8, "application/json");
                 var response = await httpClient.GetAsync("/Ventas");
                 var contenido = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(contenido);
+                //Console.WriteLine(contenido);
 
                 Obtener_ = JsonSerializer.Deserialize<Obtener_Ventas>(contenido);
                 if (Obtener_.status == "error")
                 {
                     Exception2 ex2 = JsonSerializer.Deserialize<Exception2>(contenido);
                     ExceptionsResponse x2 = new ExceptionsResponse() { status = ex2.status, code = ex2.code, data = new ExceptionsResponse.Data { error = ex2.data.error } };
-                    Console.WriteLine(x2.status);
+                    //Console.WriteLine(x2.status);
                     throw x2;
                 }
                 else if (Obtener_ == null)
                 {
                     throw new ExceptionsResponse() { status = "error", code = 404, data = new ExceptionsResponse.Data { error = "solicitud nula" } };
                 }
-                Console.WriteLine(Obtener_.status);
+                //Console.WriteLine(Obtener_.status);
             }
             catch (ExceptionsResponse ex)
             {
@@ -107,22 +107,22 @@ namespace DVStudio.SDK.clases
                 StringContent body = new StringContent(JsonSerializer.Serialize(new { id = id, data = Ventas }), System.Text.Encoding.UTF8, "application/json");
                 var response = await httpClient.PutAsync("/Ventas", body);
                 var contenido = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(contenido);
-                Console.WriteLine(Ventas.Fecha);
+                //Console.WriteLine(contenido);
+                //Console.WriteLine(Ventas.Fecha);
 
                 Update_ = JsonSerializer.Deserialize<Response_General>(contenido);
                 if (Update_.status == "error")
                 {
                     Exception2 ex2 = JsonSerializer.Deserialize<Exception2>(contenido);
                     ExceptionsResponse x2 = new ExceptionsResponse() { status = ex2.status, code = ex2.code, data = new ExceptionsResponse.Data { error = ex2.data.error } };
-                    Console.WriteLine(x2.status);
+                    //Console.WriteLine(x2.status);
                     throw x2;
                 }
                 else if (Update_ == null)
                 {
                     throw new ExceptionsResponse() { status = "error", code = 404, data = new ExceptionsResponse.Data { error = "solicitud nula" } };
                 }
-                Console.WriteLine(Update_.status);
+                //Console.WriteLine(Update_.status);
             }
             catch (ExceptionsResponse ex)
             {
@@ -146,21 +146,21 @@ namespace DVStudio.SDK.clases
                 httpClient.DefaultRequestHeaders.Add("x-access-token", token);
                 var response = await httpClient.DeleteAsync($"/Ventas/{id}");
                 var contenido = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(contenido);
+                //Console.WriteLine(contenido);
 
                 Delete_ = JsonSerializer.Deserialize<Response_General>(contenido);
                 if (Delete_.status == "error")
                 {
                     Exception2 ex2 = JsonSerializer.Deserialize<Exception2>(contenido);
                     ExceptionsResponse x2 = new ExceptionsResponse() { status = ex2.status, code = ex2.code, data = new ExceptionsResponse.Data { error = ex2.data.error } };
-                    Console.WriteLine(x2.status);
+                    //Console.WriteLine(x2.status);
                     throw x2;
                 }
                 else if (Delete_ == null)
                 {
                     throw new ExceptionsResponse() { status = "error", code = 404, data = new ExceptionsResponse.Data { error = "solicitud nula" } };
                 }
-                Console.WriteLine(Delete_.status);
+                //Console.WriteLine(Delete_.status);
             }
             catch (ExceptionsResponse ex)
             {
