@@ -2,7 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>_404_SDK_2022</RootNamespace>
+    <RootNamespace>DVStudio.SDK</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="6.0.2" />
+  </ItemGroup>
 
 </Project>
