@@ -9,10 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "404", "404\404.csproj", "{9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProjecta", "TestProjecta\TestProjecta.csproj", "{E28115AF-E9E8-413E-A270-C2EBEEA9EE6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testsdks", "testsdks\testsdks.csproj", "{0E2347E9-C012-489D-B181-59940DC007D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testsdks", "testsdks\testsdks.csproj", "{0E2347E9-C012-489D-B181-59940DC007D7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{DFC75EBB-D660-4526-A059-5A57EB81DD08} = {DFC75EBB-D660-4526-A059-5A57EB81DD08}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "404-SDK-2022", "404-SDK-2022\404-SDK-2022.csproj", "{1F61765C-7993-4B8C-9202-0DDDBFACDCF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +38,10 @@ Global
 		{0E2347E9-C012-489D-B181-59940DC007D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E2347E9-C012-489D-B181-59940DC007D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E2347E9-C012-489D-B181-59940DC007D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F61765C-7993-4B8C-9202-0DDDBFACDCF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F61765C-7993-4B8C-9202-0DDDBFACDCF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F61765C-7993-4B8C-9202-0DDDBFACDCF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F61765C-7993-4B8C-9202-0DDDBFACDCF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
