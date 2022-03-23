@@ -30,7 +30,7 @@ namespace _404_App.Formularios
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.BtnMinimizar = new FontAwesome.Sharp.IconPictureBox();
             this.BtnCerrar = new FontAwesome.Sharp.IconPictureBox();
             this.PtbIcon = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@ namespace _404_App.Formularios
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PtbIcon)).BeginInit();
             this.panel2.SuspendLayout();
@@ -52,7 +52,7 @@ namespace _404_App.Formularios
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.iconPictureBox2);
+            this.panel1.Controls.Add(this.BtnMinimizar);
             this.panel1.Controls.Add(this.BtnCerrar);
             this.panel1.Controls.Add(this.PtbIcon);
             this.panel1.Controls.Add(this.lblTitle);
@@ -63,26 +63,31 @@ namespace _404_App.Formularios
             this.panel1.TabIndex = 1;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
-            // iconPictureBox2
+            // BtnMinimizar
             // 
-            this.iconPictureBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.iconPictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 40;
-            this.iconPictureBox2.Location = new System.Drawing.Point(339, 0);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Padding = new System.Windows.Forms.Padding(1, 23, 0, 0);
-            this.iconPictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.iconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconPictureBox2.TabIndex = 8;
-            this.iconPictureBox2.TabStop = false;
+            this.BtnMinimizar.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnMinimizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnMinimizar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BtnMinimizar.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.BtnMinimizar.IconColor = System.Drawing.SystemColors.ControlText;
+            this.BtnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnMinimizar.IconSize = 40;
+            this.BtnMinimizar.Location = new System.Drawing.Point(339, 0);
+            this.BtnMinimizar.Name = "BtnMinimizar";
+            this.BtnMinimizar.Padding = new System.Windows.Forms.Padding(1, 23, 0, 0);
+            this.BtnMinimizar.Size = new System.Drawing.Size(32, 32);
+            this.BtnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.BtnMinimizar.TabIndex = 8;
+            this.BtnMinimizar.TabStop = false;
+            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
+            this.BtnMinimizar.MouseLeave += new System.EventHandler(this.BtnMinimizar_MouseLeave);
+            this.BtnMinimizar.MouseHover += new System.EventHandler(this.BtnMinimizar_MouseHover);
             // 
             // BtnCerrar
             // 
             this.BtnCerrar.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.BtnCerrar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BtnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
@@ -96,6 +101,9 @@ namespace _404_App.Formularios
             this.BtnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.BtnCerrar.TabIndex = 7;
             this.BtnCerrar.TabStop = false;
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
+            this.BtnCerrar.MouseLeave += new System.EventHandler(this.BtnCerrar_MouseLeave);
+            this.BtnCerrar.MouseHover += new System.EventHandler(this.BtnCerrar_MouseHover);
             // 
             // PtbIcon
             // 
@@ -137,6 +145,7 @@ namespace _404_App.Formularios
             // iconPictureBox3
             // 
             this.iconPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(122)))), ((int)(((byte)(131)))));
+            this.iconPictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconPictureBox3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
             this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ControlText;
@@ -147,6 +156,7 @@ namespace _404_App.Formularios
             this.iconPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.iconPictureBox3.TabIndex = 16;
             this.iconPictureBox3.TabStop = false;
+            this.iconPictureBox3.Click += new System.EventHandler(this.iconPictureBox3_Click);
             // 
             // iconPictureBox1
             // 
@@ -195,6 +205,7 @@ namespace _404_App.Formularios
             this.circularProgressBar1.TabIndex = 14;
             this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
             this.circularProgressBar1.Value = 68;
+            this.circularProgressBar1.Visible = false;
             // 
             // BtnLogin
             // 
@@ -244,7 +255,7 @@ namespace _404_App.Formularios
             this.txtPassword.Location = new System.Drawing.Point(90, 348);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.PasswordChar = '\0';
             this.txtPassword.PlaceholderText = "Contraseña";
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(229, 43);
@@ -289,9 +300,10 @@ namespace _404_App.Formularios
             this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
+            this.Load += new System.EventHandler(this.login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PtbIcon)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -304,7 +316,7 @@ namespace _404_App.Formularios
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private FontAwesome.Sharp.IconPictureBox BtnMinimizar;
         private FontAwesome.Sharp.IconPictureBox BtnCerrar;
         private System.Windows.Forms.PictureBox PtbIcon;
         private System.Windows.Forms.Label lblTitle;

@@ -31,7 +31,7 @@ namespace _404_App.Formularios
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.PnBar = new System.Windows.Forms.Panel();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.BtnMinimizar = new FontAwesome.Sharp.IconPictureBox();
             this.BtnCerrar = new FontAwesome.Sharp.IconPictureBox();
             this.PtbIcon = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@ namespace _404_App.Formularios
             this.PnShow = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PtbIcon)).BeginInit();
             this.panel2.SuspendLayout();
@@ -58,7 +58,7 @@ namespace _404_App.Formularios
             // 
             // PnBar
             // 
-            this.PnBar.Controls.Add(this.iconPictureBox2);
+            this.PnBar.Controls.Add(this.BtnMinimizar);
             this.PnBar.Controls.Add(this.BtnCerrar);
             this.PnBar.Controls.Add(this.PtbIcon);
             this.PnBar.Controls.Add(this.lblTitle);
@@ -69,26 +69,31 @@ namespace _404_App.Formularios
             this.PnBar.TabIndex = 0;
             this.PnBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PnBar_MouseMove);
             // 
-            // iconPictureBox2
+            // BtnMinimizar
             // 
-            this.iconPictureBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.iconPictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 40;
-            this.iconPictureBox2.Location = new System.Drawing.Point(1274, 0);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Padding = new System.Windows.Forms.Padding(1, 23, 0, 0);
-            this.iconPictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.iconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconPictureBox2.TabIndex = 8;
-            this.iconPictureBox2.TabStop = false;
+            this.BtnMinimizar.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnMinimizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BtnMinimizar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BtnMinimizar.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.BtnMinimizar.IconColor = System.Drawing.SystemColors.ControlText;
+            this.BtnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnMinimizar.IconSize = 40;
+            this.BtnMinimizar.Location = new System.Drawing.Point(1274, 0);
+            this.BtnMinimizar.Name = "BtnMinimizar";
+            this.BtnMinimizar.Padding = new System.Windows.Forms.Padding(1, 23, 0, 0);
+            this.BtnMinimizar.Size = new System.Drawing.Size(32, 32);
+            this.BtnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.BtnMinimizar.TabIndex = 8;
+            this.BtnMinimizar.TabStop = false;
+            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
+            this.BtnMinimizar.MouseLeave += new System.EventHandler(this.BtnMinimizar_MouseLeave);
+            this.BtnMinimizar.MouseHover += new System.EventHandler(this.BtnMinimizar_MouseHover);
             // 
             // BtnCerrar
             // 
             this.BtnCerrar.BackColor = System.Drawing.SystemColors.Control;
+            this.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.BtnCerrar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BtnCerrar.IconChar = FontAwesome.Sharp.IconChar.Times;
@@ -102,6 +107,9 @@ namespace _404_App.Formularios
             this.BtnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.BtnCerrar.TabIndex = 7;
             this.BtnCerrar.TabStop = false;
+            this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
+            this.BtnCerrar.MouseLeave += new System.EventHandler(this.BtnCerrar_MouseLeave);
+            this.BtnCerrar.MouseHover += new System.EventHandler(this.BtnCerrar_MouseHover);
             // 
             // PtbIcon
             // 
@@ -342,7 +350,7 @@ namespace _404_App.Formularios
             this.Text = "MenuPrincipal";
             this.PnBar.ResumeLayout(false);
             this.PnBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PtbIcon)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -370,7 +378,7 @@ namespace _404_App.Formularios
         private System.Windows.Forms.PictureBox PtbIcon;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private FontAwesome.Sharp.IconPictureBox BtnMinimizar;
         private FontAwesome.Sharp.IconPictureBox BtnCerrar;
     }
 }

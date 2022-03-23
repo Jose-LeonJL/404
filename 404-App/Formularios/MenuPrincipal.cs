@@ -38,5 +38,34 @@ namespace _404_App.Formularios
             ReleaseCapture();
             SendMessage(Handle, 0x112, 0xF012, 0);
         }
+        
+        //Botones Barra
+        private void BtnCerrar_MouseHover(object sender, EventArgs e)
+        {
+            BtnCerrar.BackColor = Color.Red;
+        }
+        private void BtnMinimizar_MouseHover(object sender, EventArgs e)
+        {
+            BtnMinimizar.BackColor = Color.DimGray;
+        }
+        private void BtnCerrar_MouseLeave(object sender, EventArgs e)
+        {
+            BtnCerrar.BackColor = Color.Transparent;
+        }
+        private void BtnMinimizar_MouseLeave(object sender, EventArgs e)
+        {
+            BtnMinimizar.BackColor = Color.Transparent;
+        }
+        
+        //Boton Cerrar
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        //Boton Minimizar
+        private void BtnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
