@@ -61,13 +61,16 @@
   <PropertyGroup />
   <ItemGroup>
     <Reference Include="CircularProgressBar">
-      <HintPath>..\..\SUANY GARCIA\xd\CircularProgressBar.dll</HintPath>
+      <HintPath>..\..\..\..\OneDrive\Escritorio\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.10.4.0\lib\netstandard2.0\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net48\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
-      <HintPath>..\..\SUANY GARCIA\xd\Guna.UI.dll</HintPath>
+      <HintPath>..\..\..\..\OneDrive\Escritorio\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2, Version=2.0.3.1, Culture=neutral, PublicKeyToken=e4b9cdd7b4cde4b4, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.1\lib\net40\Guna.UI2.dll</HintPath>
@@ -117,10 +120,16 @@
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
     <Reference Include="WinFormAnimation">
-      <HintPath>..\..\SUANY GARCIA\xd\WinFormAnimation.dll</HintPath>
+      <HintPath>..\..\..\..\OneDrive\Escritorio\WinFormAnimation.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases_Validaciones\ClaseActualizarContrasena.cs" />
+    <Compile Include="Clases_Validaciones\ClaseClientes.cs" />
+    <Compile Include="Clases_Validaciones\ClaseInventario.cs" />
+    <Compile Include="Clases_Validaciones\ClaseLogin.cs" />
+    <Compile Include="Clases_Validaciones\ClaseUsuarios.cs" />
+    <Compile Include="Clases_Validaciones\ClaseVentas.cs" />
     <Compile Include="Formularios\CRUD.cs">
       <SubType>Form</SubType>
     </Compile>

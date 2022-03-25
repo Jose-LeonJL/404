@@ -11,6 +11,9 @@ using DVStudio.SDK.clases;
 using DVStudio.SDK.Estructuras;
 using DVStudio.SDK.Exceptions;
 using _404_App.Formularios;
+using _404_App.Clases_Validaciones;
+using FluentValidation;
+using FluentValidation.Results;
 
 namespace _404_App.Formularios
 {
@@ -61,10 +64,25 @@ namespace _404_App.Formularios
             try
             {
                 circularProgressBar1.Visible = true;
+                var login = new ClaseLogin()
+                {
+                    Correo=txtUser.Text,
+                    Contraseña=txtPassword.Text
+
+                  
+                };
+                var validar = new LoginValidator();
+                ValidationResult Resultado = validar.Validate(login);
+
+                if (!Resultado.IsValid)
+                {
+                    throw new Exception(Resultado.Errors[0].ToString());
+                }
+
                 var result = await Login.create_Login(new Struct_Login() 
                 { 
-                    Correo = txtUser.Text,
-                    Contraseña = txtPassword.Text
+                    Correo = login.Correo,
+                    Contraseña = login.Contraseña
                 });
                 circularProgressBar1.Visible = false;
                 if (result.data.login)
@@ -78,7 +96,13 @@ namespace _404_App.Formularios
                 circularProgressBar1.Visible = false;
                 var ERROR = new FrmNotificacionError(ex.data.error);
                 ERROR.showAlert();
+            }catch(Exception ex)
+            {
+                circularProgressBar1.Visible = false;
+                var ERROR = new FrmNotificacionError(ex.Message);
+                ERROR.showAlert();
             }
+            
         }
 
         //Botones de barra
