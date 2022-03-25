@@ -125,10 +125,10 @@ namespace _404_App.Formularios
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(43, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(104, 18);
+            this.lblTitle.Size = new System.Drawing.Size(114, 18);
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "MenuPrincipal";
             this.lblTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblTitle_MouseMove);
@@ -147,7 +147,7 @@ namespace _404_App.Formularios
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 32);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(238, 781);
+            this.panel2.Size = new System.Drawing.Size(238, 756);
             this.panel2.TabIndex = 1;
             // 
             // lbllink
@@ -156,10 +156,10 @@ namespace _404_App.Formularios
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbllink.AutoSize = true;
-            this.lbllink.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lbllink.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.lbllink.Location = new System.Drawing.Point(59, 748);
             this.lbllink.Name = "lbllink";
-            this.lbllink.Size = new System.Drawing.Size(102, 25);
+            this.lbllink.Size = new System.Drawing.Size(110, 25);
             this.lbllink.TabIndex = 0;
             this.lbllink.Text = "DVStudio";
             // 
@@ -175,7 +175,7 @@ namespace _404_App.Formularios
             this.BtnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnSalir.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnSalir.FocusedColor = System.Drawing.Color.Empty;
-            this.BtnSalir.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSalir.ForeColor = System.Drawing.Color.Black;
             this.BtnSalir.Image = global::_404_App.Properties.Resources.icons8_Logout_48px;
             this.BtnSalir.ImageSize = new System.Drawing.Size(40, 40);
@@ -204,7 +204,7 @@ namespace _404_App.Formularios
             this.BtnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnUsuarios.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnUsuarios.FocusedColor = System.Drawing.Color.Empty;
-            this.BtnUsuarios.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUsuarios.ForeColor = System.Drawing.Color.Black;
             this.BtnUsuarios.Image = global::_404_App.Properties.Resources.icons8_user_60px;
             this.BtnUsuarios.ImageSize = new System.Drawing.Size(40, 40);
@@ -233,7 +233,7 @@ namespace _404_App.Formularios
             this.BtnInventario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnInventario.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnInventario.FocusedColor = System.Drawing.Color.Empty;
-            this.BtnInventario.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnInventario.ForeColor = System.Drawing.Color.Black;
             this.BtnInventario.Image = global::_404_App.Properties.Resources.icons8_todo_list_48px;
             this.BtnInventario.ImageSize = new System.Drawing.Size(40, 40);
@@ -278,7 +278,7 @@ namespace _404_App.Formularios
             this.BtnVentas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnVentas.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnVentas.FocusedColor = System.Drawing.Color.Empty;
-            this.BtnVentas.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnVentas.ForeColor = System.Drawing.Color.Black;
             this.BtnVentas.Image = global::_404_App.Properties.Resources.icons8_fast_cart_48px_3;
             this.BtnVentas.ImageSize = new System.Drawing.Size(40, 40);
@@ -294,10 +294,11 @@ namespace _404_App.Formularios
             this.BtnVentas.TabIndex = 0;
             this.BtnVentas.Text = "Ventas";
             this.BtnVentas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnVentas.Click += new System.EventHandler(this.BtnVentas_Click);
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(238, 23);
@@ -307,7 +308,7 @@ namespace _404_App.Formularios
             // 
             // LblUserNickName
             // 
-            this.LblUserNickName.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUserNickName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUserNickName.Location = new System.Drawing.Point(0, 203);
             this.LblUserNickName.Name = "LblUserNickName";
             this.LblUserNickName.Size = new System.Drawing.Size(238, 23);
@@ -322,7 +323,7 @@ namespace _404_App.Formularios
             this.PnShow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnShow.Location = new System.Drawing.Point(238, 32);
             this.PnShow.Name = "PnShow";
-            this.PnShow.Size = new System.Drawing.Size(1100, 781);
+            this.PnShow.Size = new System.Drawing.Size(1100, 756);
             this.PnShow.TabIndex = 2;
             // 
             // pictureBox1
@@ -339,7 +340,7 @@ namespace _404_App.Formularios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1338, 813);
+            this.ClientSize = new System.Drawing.Size(1338, 788);
             this.Controls.Add(this.PnShow);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.PnBar);

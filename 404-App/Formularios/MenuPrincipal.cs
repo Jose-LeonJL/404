@@ -67,5 +67,24 @@ namespace _404_App.Formularios
         {
             this.WindowState = FormWindowState.Minimized;
         }
+        public void AddFormulario(Form f)
+        {
+            if (this.PnShow.Controls.Count > 0)
+            {
+                this.PnShow.Controls.RemoveAt(0);
+            }
+
+            f.TopLevel = false;
+            this.PnShow.Controls.Add(f);
+            f.Dock = DockStyle.Fill;
+            f.Show();
+
+        }
+
+        private void BtnVentas_Click(object sender, EventArgs e)
+        {
+            login h = new login();
+            AddFormulario(h);
+        }
     }
 }
