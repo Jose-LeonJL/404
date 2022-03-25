@@ -1,7 +1,7 @@
 ﻿
 namespace _404_App.Formularios
 {
-    partial class CRUD
+    partial class CRUD_Inventario
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,12 @@ namespace _404_App.Formularios
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PnShow = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.LblUserNickName = new System.Windows.Forms.Label();
             this.tabla = new Guna.UI.WinForms.GunaDataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,11 +51,9 @@ namespace _404_App.Formularios
             this.BtnEliminar = new Guna.UI.WinForms.GunaButton();
             this.BtnActualizar = new Guna.UI.WinForms.GunaButton();
             this.BtnCrear = new Guna.UI.WinForms.GunaButton();
-            this.txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnShow.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             this.SuspendLayout();
             // 
             // PnShow
@@ -68,41 +68,79 @@ namespace _404_App.Formularios
             this.PnShow.Controls.Add(this.BtnActualizar);
             this.PnShow.Controls.Add(this.BtnCrear);
             this.PnShow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnShow.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PnShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PnShow.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.PnShow.Location = new System.Drawing.Point(0, 0);
             this.PnShow.Name = "PnShow";
-            this.PnShow.Size = new System.Drawing.Size(1100, 781);
+            this.PnShow.Size = new System.Drawing.Size(1100, 740);
             this.PnShow.TabIndex = 3;
+            this.PnShow.Paint += new System.Windows.Forms.PaintEventHandler(this.PnShow_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::_404_App.Properties.Resources.icons8_search_100px;
+            this.pictureBox1.Location = new System.Drawing.Point(1032, 113);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtbuscar
+            // 
+            this.txtbuscar.Animated = true;
+            this.txtbuscar.BorderThickness = 3;
+            this.txtbuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbuscar.DefaultText = "Buscar";
+            this.txtbuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbuscar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbuscar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(122)))), ((int)(((byte)(131)))));
+            this.txtbuscar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbuscar.ForeColor = System.Drawing.Color.Black;
+            this.txtbuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbuscar.Location = new System.Drawing.Point(797, 110);
+            this.txtbuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.PasswordChar = '\0';
+            this.txtbuscar.PlaceholderText = "";
+            this.txtbuscar.SelectedText = "";
+            this.txtbuscar.Size = new System.Drawing.Size(229, 43);
+            this.txtbuscar.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtbuscar.TabIndex = 10;
+            this.txtbuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LblUserNickName
             // 
-            this.LblUserNickName.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUserNickName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUserNickName.ForeColor = System.Drawing.Color.Black;
             this.LblUserNickName.Location = new System.Drawing.Point(408, 31);
             this.LblUserNickName.Name = "LblUserNickName";
             this.LblUserNickName.Size = new System.Drawing.Size(238, 23);
             this.LblUserNickName.TabIndex = 8;
-            this.LblUserNickName.Text = "Title";
+            this.LblUserNickName.Text = "Inventario";
             this.LblUserNickName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabla
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.tabla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.tabla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tabla.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(81)))), ((int)(((byte)(87)))));
             this.tabla.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tabla.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tabla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
@@ -114,14 +152,14 @@ namespace _404_App.Formularios
             this.Column8,
             this.Column9,
             this.Column10});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tabla.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tabla.DefaultCellStyle = dataGridViewCellStyle3;
             this.tabla.EnableHeadersVisualStyles = false;
             this.tabla.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tabla.Location = new System.Drawing.Point(12, 185);
@@ -140,14 +178,14 @@ namespace _404_App.Formularios
             this.tabla.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tabla.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.tabla.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.tabla.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabla.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabla.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.tabla.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.tabla.ThemeStyle.HeaderStyle.Height = 23;
             this.tabla.ThemeStyle.ReadOnly = false;
             this.tabla.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.tabla.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.tabla.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabla.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabla.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.tabla.ThemeStyle.RowsStyle.Height = 22;
             this.tabla.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -215,7 +253,7 @@ namespace _404_App.Formularios
             this.BtnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnReporte.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnReporte.FocusedColor = System.Drawing.Color.Empty;
-            this.BtnReporte.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnReporte.ForeColor = System.Drawing.Color.Black;
             this.BtnReporte.Image = null;
             this.BtnReporte.ImageSize = new System.Drawing.Size(40, 40);
@@ -244,7 +282,7 @@ namespace _404_App.Formularios
             this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEliminar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnEliminar.FocusedColor = System.Drawing.Color.Empty;
-            this.BtnEliminar.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEliminar.ForeColor = System.Drawing.Color.Black;
             this.BtnEliminar.Image = null;
             this.BtnEliminar.ImageSize = new System.Drawing.Size(40, 40);
@@ -273,7 +311,7 @@ namespace _404_App.Formularios
             this.BtnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnActualizar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnActualizar.FocusedColor = System.Drawing.Color.Empty;
-            this.BtnActualizar.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnActualizar.ForeColor = System.Drawing.Color.Black;
             this.BtnActualizar.Image = null;
             this.BtnActualizar.ImageSize = new System.Drawing.Size(40, 40);
@@ -302,7 +340,7 @@ namespace _404_App.Formularios
             this.BtnCrear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCrear.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnCrear.FocusedColor = System.Drawing.Color.Empty;
-            this.BtnCrear.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCrear.ForeColor = System.Drawing.Color.Black;
             this.BtnCrear.Image = null;
             this.BtnCrear.ImageSize = new System.Drawing.Size(40, 40);
@@ -319,55 +357,18 @@ namespace _404_App.Formularios
             this.BtnCrear.Text = "Crear";
             this.BtnCrear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtbuscar
-            // 
-            this.txtbuscar.Animated = true;
-            this.txtbuscar.BorderThickness = 3;
-            this.txtbuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbuscar.DefaultText = "Buscar";
-            this.txtbuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbuscar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbuscar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(122)))), ((int)(((byte)(131)))));
-            this.txtbuscar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbuscar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbuscar.ForeColor = System.Drawing.Color.Black;
-            this.txtbuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbuscar.Location = new System.Drawing.Point(797, 110);
-            this.txtbuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.PasswordChar = '\0';
-            this.txtbuscar.PlaceholderText = "";
-            this.txtbuscar.SelectedText = "";
-            this.txtbuscar.Size = new System.Drawing.Size(229, 43);
-            this.txtbuscar.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtbuscar.TabIndex = 10;
-            this.txtbuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::_404_App.Properties.Resources.icons8_search_100px;
-            this.pictureBox1.Location = new System.Drawing.Point(1032, 113);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
-            // CRUD
+            // CRUD_Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 781);
+            this.ClientSize = new System.Drawing.Size(1100, 740);
             this.Controls.Add(this.PnShow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "CRUD";
+            this.Name = "CRUD_Inventario";
             this.Text = "CRUD";
             this.PnShow.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
             this.ResumeLayout(false);
 
         }

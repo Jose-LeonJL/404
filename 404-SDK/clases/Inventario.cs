@@ -66,8 +66,8 @@ namespace DVStudio.SDK.clases
             StringContent body = new StringContent(JsonSerializer.Serialize(inventario), System.Text.Encoding.UTF8,"application/json");
             var response = await httpClient.PostAsync("/Inventario", body);
             var contenido = await response.Content.ReadAsStringAsync();
-            //Console.WriteLine(contenido);
-            //Console.WriteLine(inventario.Marca);
+            Console.WriteLine(contenido);
+            Console.WriteLine(inventario.Marca);
 
 
                 response_ = JsonSerializer.Deserialize<Response_General>(contenido);
@@ -75,14 +75,14 @@ namespace DVStudio.SDK.clases
                 {
                     Exception2 ex2 = JsonSerializer.Deserialize<Exception2>(contenido);
                     ExceptionsResponse x2 = new ExceptionsResponse() { status = ex2.status, code = ex2.code, data = new ExceptionsResponse.Data { error = ex2.data.error } };
-                    //Console.WriteLine(x2.status);
+                    Console.WriteLine(x2.status);
                     throw x2;
                 }
                 else if (response_ == null)
                 {
                     throw new ExceptionsResponse() { status = "error", code = 404, data = new ExceptionsResponse.Data { error = "solicitud nula" } };
                 }
-                //Console.WriteLine(response_.status);
+                Console.WriteLine(response_.status);
             }
             catch (ExceptionsResponse ex)
             {
