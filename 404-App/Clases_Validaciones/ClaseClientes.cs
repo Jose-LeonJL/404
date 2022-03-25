@@ -23,9 +23,9 @@ namespace _404_App.Clases_Validaciones
             //codigo
             RuleFor(x => x.Codigo).NotEmpty().WithMessage("El campo codigo no puede ir Nulo");
             //Identidad
-            RuleFor(x => x.Identidad).NotEmpty().WithMessage(" El Campo Identidad no puede ir nulo").MinimumLength(13).MaximumLength(13).WithMessage("tiene que tener 13 caracteres");
+            RuleFor(x => x.Identidad).NotEmpty().WithMessage(" El Campo Identidad no puede ir nulo").MinimumLength(15).MaximumLength(15).WithMessage("tiene que tener 15 caracteres con guiones ");
             //Telefono
-            RuleFor(x => x.Telefono).NotEmpty().WithMessage(" El Campo Telefono no puede ir nulo").MinimumLength(8).MaximumLength(8).WithMessage("tiene que tener 8 caracteres");
+            RuleFor(x => x.Telefono).NotEmpty().WithMessage(" El Campo Telefono no puede ir nulo").MinimumLength(9).MaximumLength(9).WithMessage("tiene que tener 9 caracteres con un guion en medio");
 
         }
     }
