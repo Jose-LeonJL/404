@@ -11,37 +11,66 @@ namespace _404_App.Clases_Validaciones
 {
     public class ClaseVentas
     {
-        public struct Struct_Ventas
-        {
-            public Productos[] Productos { get; set; }
-            public string Codigo { get; set; }
-            public string Fecha { get; set; }
-            public Struct_Cliente Cliente { get; set; }
-            public Struct_Usuarios Empleado { get; set; }
-            public int IVS { get; set; }
-            public int Total { get; set; }
-        }
-        public struct Productos
-        {
-            public string id { get; set; }
-        }
+        public Productos[] Productos { get; set; }
+        public string id { get; set; }
+        public string Codigo { get; set; }
+        public string Fecha { get; set; }
+        public Struct_Cliente Cliente { get; set; }
+        public Struct_Usuarios Empleado { get; set; }
+        public double IVS { get; set; }
+        public double Total { get; set; }
     }
 
-    public class VentasValidator : AbstractValidator<ClaseVentas.Productos>
+    public class VentasValidator3 : AbstractValidator<Productos[]>
     {
-        public VentasValidator()
+        public VentasValidator3()
         {
             //id
-            RuleFor(x => x.id).NotEmpty().WithMessage("El Campo Id no puede ir Nulo");
+            RuleFor(x => x).NotEmpty().WithMessage("El Campo Id no puede ir Nulo");
         }
     }
+    public class VentasValidator2 : AbstractValidator<Struct_Cliente>
+    {
+        public VentasValidator2()
+        {
+            //id
+            RuleFor(x => x.Identidad).NotEmpty().WithMessage(" El Campo Identidad no puede ir nulo").MinimumLength(15).MaximumLength(15).WithMessage("tiene que tener 15 caracteres con guiones");
+            RuleFor(x => x.Nombre).NotEmpty().WithMessage("El Campo Nombre no puede ir Nulo");
+            RuleFor(x => x.Telefono).NotEmpty().WithMessage(" El Campo Telefono no puede ir nulo").MinimumLength(9).MaximumLength(9).WithMessage("tiene que tener 9 caracteres con un guion en medio");
+        }
+    }
+    public class VentasValidator4 : AbstractValidator<Struct_Usuarios>
+    {
+        public VentasValidator4()
+        {
+            //id
+            RuleFor(x => x.Correo).NotEmpty().WithMessage("El Campo Correo No puede ir Nulo").EmailAddress().WithMessage("El Correo Tiene que ser valido");
 
-    public class VentasValidator1 : AbstractValidator<ClaseVentas.Struct_Ventas>
+            //Codigo
+            RuleFor(x => x.Codigo).NotEmpty().WithMessage("El Campo Codigo No puede ir Nulo");
+            //Nombre
+            RuleFor(x => x.Nombre).NotEmpty().WithMessage("El Campo Nombre no puede ir Nulo");
+            //Identidad
+            RuleFor(x => x.Identidad).NotEmpty().WithMessage(" El Campo Identidad no puede ir nulo").MinimumLength(15).MaximumLength(15).WithMessage("tiene que tener 15 caracteres con guiones");
+            //Sueldo
+            RuleFor(x => x.Sueldo).NotEmpty().WithMessage("El Campo Sueldo no puede ir Nulo");
+            //Telefono
+            RuleFor(x => x.Telefono).NotEmpty().WithMessage(" El Campo Telefono no puede ir nulo").MinimumLength(9).MaximumLength(9).WithMessage("tiene que tener 9 caracteres con un guion en medio");
+            //Nick
+            RuleFor(x => x.Nick).NotEmpty().WithMessage("El Campo Nick no puede ir Nulo");
+            //Tipo
+            RuleFor(x => x.Tipo).NotEmpty().WithMessage("El Campo Tipo no puede ir Nulo");
+            //Contraseña
+            RuleFor(x => x.Contraseña).NotEmpty().WithMessage("El Campo Contraseña no puede ir Nulo");
+        }
+    }
+    public class VentasValidator1 : AbstractValidator<ClaseVentas>
     {
         public VentasValidator1()
         {
             //Producto
-            RuleFor(x => x.Productos).NotEmpty().WithMessage("La Lista de Id no puede Contener Nulos");
+            RuleFor(x => x.id).NotEmpty().WithMessage("El Id no puede Contener Nulos");
+            RuleFor(x => x.Productos).NotEmpty().WithMessage("Ingrese al menos un producto");
             //codigo
             RuleFor(x =>x.Codigo).NotEmpty().WithMessage("El Campo Id no puede ir Nulo");
             //Fecha

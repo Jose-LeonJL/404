@@ -11,8 +11,8 @@ namespace DVStudio.SDK.Estructuras
         public string Fecha { get; set; }
         public Struct_Cliente Cliente { get; set; }
         public Struct_Usuarios Empleado { get; set; }
-        public int IVS { get; set; }
-        public int Total { get; set; }
+        public double IVS { get; set; }
+        public double Total { get; set; }
     }
     public struct Productos
     {

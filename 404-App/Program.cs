@@ -16,7 +16,7 @@ namespace _404_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Splash());
+            Application.Run(new login());
         }
     }
 }

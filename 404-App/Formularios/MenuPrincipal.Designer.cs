@@ -157,7 +157,7 @@ namespace _404_App.Formularios
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbllink.AutoSize = true;
             this.lbllink.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lbllink.Location = new System.Drawing.Point(59, 748);
+            this.lbllink.Location = new System.Drawing.Point(57, 722);
             this.lbllink.Name = "lbllink";
             this.lbllink.Size = new System.Drawing.Size(110, 25);
             this.lbllink.TabIndex = 0;
@@ -220,6 +220,7 @@ namespace _404_App.Formularios
             this.BtnUsuarios.TabIndex = 3;
             this.BtnUsuarios.Text = "Usuarios";
             this.BtnUsuarios.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnUsuarios.Click += new System.EventHandler(this.BtnUsuarios_Click);
             // 
             // BtnInventario
             // 
@@ -249,6 +250,7 @@ namespace _404_App.Formularios
             this.BtnInventario.TabIndex = 2;
             this.BtnInventario.Text = "Inventario";
             this.BtnInventario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnInventario.Click += new System.EventHandler(this.BtnInventario_Click);
             // 
             // iconPictureBox1
             // 
@@ -349,6 +351,7 @@ namespace _404_App.Formularios
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipal";
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.PnBar.ResumeLayout(false);
             this.PnBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).EndInit();

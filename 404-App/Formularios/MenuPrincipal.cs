@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using _404_App.Libs;
 
 namespace _404_App.Formularios
 {
     public partial class MenuPrincipal : Form
     {
+        private CRUD_Ventas FRMVentas;
+        private CRUD_Inventario FRMInventario;
+        private CRUD_Usuarios FRMUsarios;
 
         [DllImportAttribute("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -21,6 +25,9 @@ namespace _404_App.Formularios
         public MenuPrincipal()
         {
             InitializeComponent();
+            FRMVentas = new CRUD_Ventas();
+            FRMInventario = new CRUD_Inventario();
+            FRMUsarios = new CRUD_Usuarios();
         }
 
         private void PnBar_MouseMove(object sender, MouseEventArgs e)
@@ -69,22 +76,29 @@ namespace _404_App.Formularios
         }
         public void AddFormulario(Form f)
         {
-            if (this.PnShow.Controls.Count > 0)
-            {
-                this.PnShow.Controls.RemoveAt(0);
-            }
-
-            f.TopLevel = false;
-            this.PnShow.Controls.Add(f);
-            f.Dock = DockStyle.Fill;
-            f.Show();
-
+            var view = new Libs.View();
+            view.OpenForm(f, PnShow);
         }
 
         private void BtnVentas_Click(object sender, EventArgs e)
         {
-            login h = new login();
-            AddFormulario(h);
+            AddFormulario(FRMVentas);
+        }
+
+        private void BtnInventario_Click(object sender, EventArgs e)
+        {
+            AddFormulario(FRMInventario);
+        }
+
+        private void BtnUsuarios_Click(object sender, EventArgs e)
+        {
+            AddFormulario(FRMUsarios);
+        }
+
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+            LblUserNickName.Text = Datos.Usuario.Nick;
         }
     }
 }
