@@ -66,7 +66,7 @@ namespace _404_App.Formularios
             this.PnShow.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.PnShow.Location = new System.Drawing.Point(0, 0);
             this.PnShow.Name = "PnShow";
-            this.PnShow.Size = new System.Drawing.Size(1100, 756);
+            this.PnShow.Size = new System.Drawing.Size(1100, 740);
             this.PnShow.TabIndex = 3;
             // 
             // LblCargando
@@ -347,7 +347,7 @@ namespace _404_App.Formularios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 756);
+            this.ClientSize = new System.Drawing.Size(1100, 740);
             this.Controls.Add(this.PnShow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CRUD_Inventario";

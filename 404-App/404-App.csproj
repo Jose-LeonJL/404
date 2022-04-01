@@ -137,11 +137,23 @@
     <Compile Include="Clases_Validaciones\ClaseUsuarios.cs" />
     <Compile Include="Clases_Validaciones\ClaseVentas.cs" />
     <Compile Include="Datos.cs" />
+    <Compile Include="Formularios\Acciones\EliminarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Acciones\EliminarUsuario.Designer.cs">
+      <DependentUpon>EliminarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Acciones\FrmCrear.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Acciones\FrmCrear.Designer.cs">
       <DependentUpon>FrmCrear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Acciones\FrmActualizarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Acciones\FrmActualizarInventario.Designer.cs">
+      <DependentUpon>FrmActualizarInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Acciones\FrmCrearInventario.cs">
       <SubType>Form</SubType>
@@ -206,8 +218,14 @@
     <Compile Include="Libs\View.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Acciones\EliminarUsuario.resx">
+      <DependentUpon>EliminarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Acciones\FrmCrear.resx">
       <DependentUpon>FrmCrear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Acciones\FrmActualizarInventario.resx">
+      <DependentUpon>FrmActualizarInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Acciones\FrmCrearInventario.resx">
       <DependentUpon>FrmCrearInventario.cs</DependentUpon>
