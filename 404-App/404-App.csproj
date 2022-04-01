@@ -137,6 +137,12 @@
     <Compile Include="Clases_Validaciones\ClaseUsuarios.cs" />
     <Compile Include="Clases_Validaciones\ClaseVentas.cs" />
     <Compile Include="Datos.cs" />
+    <Compile Include="Formularios\Acciones\EliminarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Acciones\EliminarInventario.Designer.cs">
+      <DependentUpon>EliminarInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Acciones\EliminarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +224,9 @@
     <Compile Include="Libs\View.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Acciones\EliminarInventario.resx">
+      <DependentUpon>EliminarInventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Acciones\EliminarUsuario.resx">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </EmbeddedResource>
