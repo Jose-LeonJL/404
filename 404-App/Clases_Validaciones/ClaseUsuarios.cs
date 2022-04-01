@@ -11,6 +11,7 @@ namespace _404_App.Clases_Validaciones
 {
    public class ClaseUsuarios
     {
+        public string id { get; set; }
         public string Correo { get; set; }
         public string Codigo { get; set; }
         public string Nombre { get; set; }
@@ -27,6 +28,7 @@ namespace _404_App.Clases_Validaciones
     {
         public UsuariosValidator()
         {
+            RuleFor(x => x.id).NotEmpty().WithMessage("El Campo id No puede ir Nulo");
             //Correo
             RuleFor(x => x.Correo).NotEmpty().WithMessage("El Campo Correo No puede ir Nulo").EmailAddress().WithMessage("El Correo Tiene que ser valido");
             //Codigo

@@ -5,17 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _404_App.Formularios
+namespace _404_App.Formularios.Acciones
 {
-    public partial class CRUD : Form
+    public partial class FrmUpdateUsuarios : Form
     {
-        public CRUD()
+        public FrmUpdateUsuarios()
         {
             InitializeComponent();
         }
-
-  
     }
 }

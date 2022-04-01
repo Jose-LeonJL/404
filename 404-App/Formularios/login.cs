@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using MoreLinq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
@@ -87,9 +88,38 @@ namespace _404_App.Formularios
                 circularProgressBar1.Visible = false;
                 if (result.data.login)
                 {
-                    MenuPrincipal menu = new Formularios.MenuPrincipal();
-                    menu.Show();
-                    this.Hide();
+                    Datos.Token = result.data.jwt;
+                    var users = await Usuarios.Obtener_Usuarios(result.data.jwt);
+                    Datos.Usuarios = new List<ClaseUsuarios>();
+                    foreach (var user in users.data.users)
+                    {
+                        var newuser = new ClaseUsuarios
+                        {
+                            Codigo = user.Data.Codigo,
+                            Contraseña = user.Data.Contraseña,
+                            Correo = user.Data.Correo,
+                            Identidad = user.Data.Identidad,
+                            Nick = user.Data.Nick,
+                            Nombre = user.Data.Nombre,
+                            Sueldo = user.Data.Sueldo,
+                            Telefono = user.Data.Telefono,
+                            Tipo = user.Data.Tipo,
+                            id = user.id
+                        };
+                        var validarusuario = new UsuariosValidator();
+                        Resultado = validarusuario.Validate(newuser);
+                        if (Resultado.IsValid)
+                        {
+                            Datos.Usuarios.Add(newuser);
+                        }
+                    }
+                    Datos.Usuario = (from us in Datos.Usuarios where us.Correo == login.Correo select us).FirstOrDefault();
+                    if (result.data.tipo == "Admin")
+                    {
+                        MenuPrincipal menu = new Formularios.MenuPrincipal();
+                        menu.Show();
+                        this.Hide();
+                    }
                 }
             }catch(ExceptionsResponse ex)
             {
@@ -98,6 +128,7 @@ namespace _404_App.Formularios
                 ERROR.showAlert();
             }catch(Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 circularProgressBar1.Visible = false;
                 var ERROR = new FrmNotificacionError(ex.Message);
                 ERROR.showAlert();

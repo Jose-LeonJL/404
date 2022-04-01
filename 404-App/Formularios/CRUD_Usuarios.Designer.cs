@@ -1,7 +1,7 @@
 ﻿
 namespace _404_App.Formularios
 {
-    partial class CRUD
+    partial class CRUD_Usuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -33,32 +33,26 @@ namespace _404_App.Formularios
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PnShow = new System.Windows.Forms.Panel();
+            this.LblCargando = new System.Windows.Forms.Label();
+            this.indicadorcarga = new CircularProgressBar.CircularProgressBar();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.LblUserNickName = new System.Windows.Forms.Label();
             this.tabla = new Guna.UI.WinForms.GunaDataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnReporte = new Guna.UI.WinForms.GunaButton();
             this.BtnEliminar = new Guna.UI.WinForms.GunaButton();
             this.BtnActualizar = new Guna.UI.WinForms.GunaButton();
             this.BtnCrear = new Guna.UI.WinForms.GunaButton();
-            this.txtbuscar = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnShow.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             this.SuspendLayout();
             // 
             // PnShow
             // 
             this.PnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(122)))), ((int)(((byte)(131)))));
+            this.PnShow.Controls.Add(this.LblCargando);
+            this.PnShow.Controls.Add(this.indicadorcarga);
             this.PnShow.Controls.Add(this.pictureBox1);
             this.PnShow.Controls.Add(this.txtbuscar);
             this.PnShow.Controls.Add(this.LblUserNickName);
@@ -68,27 +62,108 @@ namespace _404_App.Formularios
             this.PnShow.Controls.Add(this.BtnActualizar);
             this.PnShow.Controls.Add(this.BtnCrear);
             this.PnShow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnShow.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PnShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PnShow.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.PnShow.Location = new System.Drawing.Point(0, 0);
             this.PnShow.Name = "PnShow";
-            this.PnShow.Size = new System.Drawing.Size(1100, 781);
+            this.PnShow.Size = new System.Drawing.Size(1100, 756);
             this.PnShow.TabIndex = 3;
+            this.PnShow.Paint += new System.Windows.Forms.PaintEventHandler(this.PnShow_Paint);
+            // 
+            // LblCargando
+            // 
+            this.LblCargando.AutoSize = true;
+            this.LblCargando.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCargando.Location = new System.Drawing.Point(486, 465);
+            this.LblCargando.Name = "LblCargando";
+            this.LblCargando.Size = new System.Drawing.Size(135, 25);
+            this.LblCargando.TabIndex = 18;
+            this.LblCargando.Text = "Cargando...";
+            // 
+            // indicadorcarga
+            // 
+            this.indicadorcarga.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.CubicEaseInOut;
+            this.indicadorcarga.AnimationSpeed = 500;
+            this.indicadorcarga.BackColor = System.Drawing.Color.Transparent;
+            this.indicadorcarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
+            this.indicadorcarga.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.indicadorcarga.InnerColor = System.Drawing.Color.Transparent;
+            this.indicadorcarga.InnerMargin = 2;
+            this.indicadorcarga.InnerWidth = -1;
+            this.indicadorcarga.Location = new System.Drawing.Point(451, 266);
+            this.indicadorcarga.MarqueeAnimationSpeed = 2000;
+            this.indicadorcarga.Name = "indicadorcarga";
+            this.indicadorcarga.OuterColor = System.Drawing.Color.Silver;
+            this.indicadorcarga.OuterMargin = -25;
+            this.indicadorcarga.OuterWidth = 26;
+            this.indicadorcarga.ProgressColor = System.Drawing.Color.DimGray;
+            this.indicadorcarga.ProgressWidth = 25;
+            this.indicadorcarga.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.indicadorcarga.Size = new System.Drawing.Size(199, 196);
+            this.indicadorcarga.StartAngle = 270;
+            this.indicadorcarga.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.indicadorcarga.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.indicadorcarga.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.indicadorcarga.SubscriptText = ".23";
+            this.indicadorcarga.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.indicadorcarga.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.indicadorcarga.SuperscriptText = "°C";
+            this.indicadorcarga.TabIndex = 17;
+            this.indicadorcarga.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.indicadorcarga.Value = 68;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::_404_App.Properties.Resources.icons8_search_100px;
+            this.pictureBox1.Location = new System.Drawing.Point(1032, 113);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtbuscar
+            // 
+            this.txtbuscar.Animated = true;
+            this.txtbuscar.BorderThickness = 3;
+            this.txtbuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbuscar.DefaultText = "";
+            this.txtbuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbuscar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbuscar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(122)))), ((int)(((byte)(131)))));
+            this.txtbuscar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbuscar.ForeColor = System.Drawing.Color.Black;
+            this.txtbuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbuscar.Location = new System.Drawing.Point(797, 110);
+            this.txtbuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.PasswordChar = '\0';
+            this.txtbuscar.PlaceholderText = "Buscar";
+            this.txtbuscar.SelectedText = "";
+            this.txtbuscar.Size = new System.Drawing.Size(229, 43);
+            this.txtbuscar.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtbuscar.TabIndex = 10;
+            this.txtbuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             // 
             // LblUserNickName
             // 
-            this.LblUserNickName.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUserNickName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUserNickName.ForeColor = System.Drawing.Color.Black;
             this.LblUserNickName.Location = new System.Drawing.Point(408, 31);
             this.LblUserNickName.Name = "LblUserNickName";
             this.LblUserNickName.Size = new System.Drawing.Size(238, 23);
             this.LblUserNickName.TabIndex = 8;
-            this.LblUserNickName.Text = "Title";
+            this.LblUserNickName.Text = "Usuarios";
             this.LblUserNickName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabla
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
             this.tabla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tabla.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(81)))), ((int)(((byte)(87)))));
@@ -96,112 +171,51 @@ namespace _404_App.Formularios
             this.tabla.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tabla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tabla.DefaultCellStyle = dataGridViewCellStyle6;
             this.tabla.EnableHeadersVisualStyles = false;
-            this.tabla.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.tabla.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
             this.tabla.Location = new System.Drawing.Point(12, 185);
             this.tabla.Name = "tabla";
             this.tabla.RowHeadersVisible = false;
             this.tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tabla.Size = new System.Drawing.Size(1074, 486);
             this.tabla.TabIndex = 7;
-            this.tabla.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
-            this.tabla.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.tabla.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Alizarin;
+            this.tabla.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(201)))), ((int)(((byte)(197)))));
             this.tabla.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.tabla.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.tabla.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.tabla.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.tabla.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(81)))), ((int)(((byte)(87)))));
-            this.tabla.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.tabla.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.tabla.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(192)))), ((int)(((byte)(188)))));
+            this.tabla.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.tabla.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.tabla.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabla.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabla.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.tabla.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.tabla.ThemeStyle.HeaderStyle.Height = 23;
             this.tabla.ThemeStyle.ReadOnly = false;
-            this.tabla.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.tabla.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(219)))), ((int)(((byte)(216)))));
             this.tabla.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.tabla.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabla.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tabla.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabla.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.tabla.ThemeStyle.RowsStyle.Height = 22;
-            this.tabla.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.tabla.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Column6";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Column7";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Column8";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Column9";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Column10";
-            this.Column10.Name = "Column10";
+            this.tabla.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(125)))));
+            this.tabla.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
             // BtnReporte
             // 
@@ -215,11 +229,11 @@ namespace _404_App.Formularios
             this.BtnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnReporte.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnReporte.FocusedColor = System.Drawing.Color.Empty;
-            this.BtnReporte.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnReporte.ForeColor = System.Drawing.Color.Black;
             this.BtnReporte.Image = null;
             this.BtnReporte.ImageSize = new System.Drawing.Size(40, 40);
-            this.BtnReporte.Location = new System.Drawing.Point(915, 713);
+            this.BtnReporte.Location = new System.Drawing.Point(915, 688);
             this.BtnReporte.Name = "BtnReporte";
             this.BtnReporte.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.BtnReporte.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -244,11 +258,11 @@ namespace _404_App.Formularios
             this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEliminar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnEliminar.FocusedColor = System.Drawing.Color.Empty;
-            this.BtnEliminar.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEliminar.ForeColor = System.Drawing.Color.Black;
             this.BtnEliminar.Image = null;
             this.BtnEliminar.ImageSize = new System.Drawing.Size(40, 40);
-            this.BtnEliminar.Location = new System.Drawing.Point(614, 713);
+            this.BtnEliminar.Location = new System.Drawing.Point(614, 688);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.BtnEliminar.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -273,11 +287,11 @@ namespace _404_App.Formularios
             this.BtnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnActualizar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnActualizar.FocusedColor = System.Drawing.Color.Empty;
-            this.BtnActualizar.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnActualizar.ForeColor = System.Drawing.Color.Black;
             this.BtnActualizar.Image = null;
             this.BtnActualizar.ImageSize = new System.Drawing.Size(40, 40);
-            this.BtnActualizar.Location = new System.Drawing.Point(313, 713);
+            this.BtnActualizar.Location = new System.Drawing.Point(313, 688);
             this.BtnActualizar.Name = "BtnActualizar";
             this.BtnActualizar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.BtnActualizar.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -302,11 +316,11 @@ namespace _404_App.Formularios
             this.BtnCrear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCrear.DialogResult = System.Windows.Forms.DialogResult.None;
             this.BtnCrear.FocusedColor = System.Drawing.Color.Empty;
-            this.BtnCrear.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCrear.ForeColor = System.Drawing.Color.Black;
             this.BtnCrear.Image = null;
             this.BtnCrear.ImageSize = new System.Drawing.Size(40, 40);
-            this.BtnCrear.Location = new System.Drawing.Point(12, 713);
+            this.BtnCrear.Location = new System.Drawing.Point(12, 688);
             this.BtnCrear.Name = "BtnCrear";
             this.BtnCrear.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.BtnCrear.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -319,55 +333,20 @@ namespace _404_App.Formularios
             this.BtnCrear.Text = "Crear";
             this.BtnCrear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtbuscar
-            // 
-            this.txtbuscar.Animated = true;
-            this.txtbuscar.BorderThickness = 3;
-            this.txtbuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbuscar.DefaultText = "Buscar";
-            this.txtbuscar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbuscar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbuscar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbuscar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(122)))), ((int)(((byte)(131)))));
-            this.txtbuscar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbuscar.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbuscar.ForeColor = System.Drawing.Color.Black;
-            this.txtbuscar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbuscar.Location = new System.Drawing.Point(797, 110);
-            this.txtbuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.PasswordChar = '\0';
-            this.txtbuscar.PlaceholderText = "";
-            this.txtbuscar.SelectedText = "";
-            this.txtbuscar.Size = new System.Drawing.Size(229, 43);
-            this.txtbuscar.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.txtbuscar.TabIndex = 10;
-            this.txtbuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::_404_App.Properties.Resources.icons8_search_100px;
-            this.pictureBox1.Location = new System.Drawing.Point(1032, 113);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
-            // CRUD
+            // CRUD_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 781);
+            this.ClientSize = new System.Drawing.Size(1100, 756);
             this.Controls.Add(this.PnShow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "CRUD";
+            this.Name = "CRUD_Usuarios";
             this.Text = "CRUD";
+            this.Load += new System.EventHandler(this.CRUD_Usuarios_Load);
             this.PnShow.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
+            this.PnShow.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -376,16 +355,6 @@ namespace _404_App.Formularios
 
         private System.Windows.Forms.Panel PnShow;
         private Guna.UI.WinForms.GunaDataGridView tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private Guna.UI.WinForms.GunaButton BtnReporte;
         private Guna.UI.WinForms.GunaButton BtnEliminar;
         private Guna.UI.WinForms.GunaButton BtnActualizar;
@@ -393,5 +362,7 @@ namespace _404_App.Formularios
         private System.Windows.Forms.Label LblUserNickName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox txtbuscar;
+        private System.Windows.Forms.Label LblCargando;
+        private CircularProgressBar.CircularProgressBar indicadorcarga;
     }
 }
