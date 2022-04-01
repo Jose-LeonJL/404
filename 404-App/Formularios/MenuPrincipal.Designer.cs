@@ -67,6 +67,7 @@ namespace _404_App.Formularios
             this.PnBar.Name = "PnBar";
             this.PnBar.Size = new System.Drawing.Size(1338, 32);
             this.PnBar.TabIndex = 0;
+            this.PnBar.Paint += new System.Windows.Forms.PaintEventHandler(this.PnBar_Paint);
             this.PnBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PnBar_MouseMove);
             // 
             // BtnMinimizar
@@ -376,7 +377,6 @@ namespace _404_App.Formularios
         private System.Windows.Forms.Label LblUserNickName;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Guna.UI.WinForms.GunaButton BtnInventario;
-        private Guna.UI.WinForms.GunaButton BtnUsuarios;
         private Guna.UI.WinForms.GunaButton BtnSalir;
         private System.Windows.Forms.Label lbllink;
         private System.Windows.Forms.PictureBox PtbIcon;
@@ -384,5 +384,6 @@ namespace _404_App.Formularios
         private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconPictureBox BtnMinimizar;
         private FontAwesome.Sharp.IconPictureBox BtnCerrar;
+        public Guna.UI.WinForms.GunaButton BtnUsuarios;
     }
 }

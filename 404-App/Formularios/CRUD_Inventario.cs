@@ -85,5 +85,10 @@ namespace _404_App.Formularios
                         select vs).ToList();
             tabla.DataSource = dato;
         }
+
+        private void BtnCrear_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -230,6 +230,7 @@ namespace _404_App.Formularios
             this.BtnCrear.Text = "Crear";
             this.BtnCrear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BtnCrear.Visible = false;
+            this.BtnCrear.Click += new System.EventHandler(this.BtnCrear_Click);
             // 
             // pictureBox1
             // 

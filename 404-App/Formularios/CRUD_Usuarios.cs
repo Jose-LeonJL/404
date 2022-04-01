@@ -10,6 +10,7 @@ using DVStudio.SDK.clases;
 using FluentValidation;
 using FluentValidation.Results;
 using _404_App.Clases_Validaciones;
+using _404_App.Formularios.Acciones;
 using System.Threading.Tasks;
 
 namespace _404_App.Formularios
@@ -69,6 +70,22 @@ namespace _404_App.Formularios
                         where vs.Nombre.Contains  (txtbuscar.Text)
                         select vs).ToList();
             tabla.DataSource = dato;
+        }
+
+        private void BtnCrear_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal.ActiveForm.Enabled = false;
+            var crear = new FrmCrearUsuarios();
+            var resultado = crear.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                MenuPrincipal.ActiveForm.Enabled = true;
+            }
+            else
+            {
+                MenuPrincipal.ActiveForm.Enabled = true;
+
+            }
         }
     }
 }

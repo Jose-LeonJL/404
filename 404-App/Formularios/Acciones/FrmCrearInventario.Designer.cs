@@ -260,6 +260,7 @@
             this.BtnCancelar.TabIndex = 21;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // txtId
             // 
@@ -307,6 +308,7 @@
             this.Controls.Add(this.LblName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCrearInventario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCrearInventario";
             this.ResumeLayout(false);
 

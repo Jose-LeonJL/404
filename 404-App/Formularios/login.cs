@@ -119,6 +119,14 @@ namespace _404_App.Formularios
                         MenuPrincipal menu = new Formularios.MenuPrincipal();
                         menu.Show();
                         this.Hide();
+                        menu.BtnUsuarios.Enabled=true;
+                    }
+                    else
+                    {
+                        MenuPrincipal menu = new Formularios.MenuPrincipal();
+                        menu.Show();
+                        menu.BtnUsuarios.Enabled=false;
+                        this.Hide();
                     }
                 }
             }catch(ExceptionsResponse ex)

@@ -133,6 +133,7 @@
     <Compile Include="Clases_Validaciones\ClaseClientes.cs" />
     <Compile Include="Clases_Validaciones\ClaseInventario.cs" />
     <Compile Include="Clases_Validaciones\ClaseLogin.cs" />
+    <Compile Include="Clases_Validaciones\ClaseTipoUsuarios.cs" />
     <Compile Include="Clases_Validaciones\ClaseUsuarios.cs" />
     <Compile Include="Clases_Validaciones\ClaseVentas.cs" />
     <Compile Include="Datos.cs" />
@@ -141,6 +142,18 @@
     </Compile>
     <Compile Include="Formularios\Acciones\FrmCrear.Designer.cs">
       <DependentUpon>FrmCrear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Acciones\FrmCrearInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Acciones\FrmCrearInventario.Designer.cs">
+      <DependentUpon>FrmCrearInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Acciones\FrmCrearUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Acciones\FrmCrearUsuarios.Designer.cs">
+      <DependentUpon>FrmCrearUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\CRUD_Usuarios.cs">
       <SubType>Form</SubType>
@@ -195,6 +208,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Acciones\FrmCrear.resx">
       <DependentUpon>FrmCrear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Acciones\FrmCrearInventario.resx">
+      <DependentUpon>FrmCrearInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Acciones\FrmCrearUsuarios.resx">
+      <DependentUpon>FrmCrearUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\CRUD_Usuarios.resx">
       <DependentUpon>CRUD_Usuarios.cs</DependentUpon>

@@ -100,5 +100,10 @@ namespace _404_App.Formularios
         {
             LblUserNickName.Text = Datos.Usuario.Nick;
         }
+
+        private void PnBar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

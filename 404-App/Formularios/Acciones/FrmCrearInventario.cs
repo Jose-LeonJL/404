@@ -87,5 +87,10 @@ namespace _404_App.Formularios.Acciones
                 error.showAlert();
             }
         }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
