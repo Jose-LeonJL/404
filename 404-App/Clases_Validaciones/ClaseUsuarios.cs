@@ -29,7 +29,6 @@ namespace _404_App.Clases_Validaciones
         {
             //Correo
             RuleFor(x => x.Correo).NotEmpty().WithMessage("El Campo Correo No puede ir Nulo").EmailAddress().WithMessage("El Correo Tiene que ser valido");
-
             //Codigo
             RuleFor(x => x.Codigo).NotEmpty().WithMessage("El Campo Codigo No puede ir Nulo");
             //Nombre
