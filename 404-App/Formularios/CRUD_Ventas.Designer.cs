@@ -266,6 +266,7 @@ namespace _404_App.Formularios
             this.BtnActualizar.Text = "Actualizar";
             this.BtnActualizar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BtnActualizar.Visible = false;
+            this.BtnActualizar.Click += new System.EventHandler(this.BtnActualizar_Click);
             // 
             // BtnCrear
             // 

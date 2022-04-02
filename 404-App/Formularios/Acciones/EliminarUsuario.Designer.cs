@@ -71,6 +71,7 @@
             this.BtnCrear.TabIndex = 21;
             this.BtnCrear.Text = "Aceptar";
             this.BtnCrear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnCrear.Click += new System.EventHandler(this.BtnCrear_Click);
             // 
             // BtnCancelar
             // 
@@ -100,6 +101,7 @@
             this.BtnCancelar.TabIndex = 22;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // Form1
             // 
@@ -112,6 +114,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

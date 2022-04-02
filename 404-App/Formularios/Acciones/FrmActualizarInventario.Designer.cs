@@ -38,6 +38,7 @@
             this.BtnCrear = new Guna.UI.WinForms.GunaButton();
             this.BtnCancelar = new Guna.UI.WinForms.GunaButton();
             this.txtId = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtCodigo = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
             // LblName
@@ -290,12 +291,41 @@
             this.txtId.TabIndex = 22;
             this.txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Animated = true;
+            this.txtCodigo.BorderColor = System.Drawing.Color.Black;
+            this.txtCodigo.BorderThickness = 3;
+            this.txtCodigo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCodigo.DefaultText = "";
+            this.txtCodigo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCodigo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCodigo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCodigo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCodigo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(174)))), ((int)(((byte)(181)))));
+            this.txtCodigo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.ForeColor = System.Drawing.Color.Black;
+            this.txtCodigo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCodigo.Location = new System.Drawing.Point(194, 418);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.PasswordChar = '\0';
+            this.txtCodigo.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtCodigo.PlaceholderText = "Codigo";
+            this.txtCodigo.SelectedText = "";
+            this.txtCodigo.Size = new System.Drawing.Size(395, 43);
+            this.txtCodigo.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.txtCodigo.TabIndex = 23;
+            this.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // FrmActualizarInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(174)))), ((int)(((byte)(181)))));
             this.ClientSize = new System.Drawing.Size(800, 617);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnCrear);
@@ -326,5 +356,6 @@
         private Guna.UI.WinForms.GunaButton BtnCrear;
         private Guna.UI.WinForms.GunaButton BtnCancelar;
         private Guna.UI2.WinForms.Guna2TextBox txtId;
+        private Guna.UI2.WinForms.Guna2TextBox txtCodigo;
     }
 }

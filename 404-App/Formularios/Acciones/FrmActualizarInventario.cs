@@ -32,12 +32,20 @@ namespace _404_App.Formularios.Acciones
            int nHeightEllipse
            );
 
-
-        public FrmActualizarInventario()
+        private ClaseInventario inventario; 
+        public FrmActualizarInventario(ClaseInventario inventario)
         {
             InitializeComponent();
             codigo = System.Guid.NewGuid().ToString();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            this.inventario = inventario;
+            txtId.Text = inventario.id;
+            txtMarca.Text = inventario.Marca;
+            txtCategoria.Text = inventario.Categoria;
+            txtNombre.Text = inventario.Nombre;
+            txtPrecio.Text = inventario.Precio.ToString();
+            txtStock.Text = inventario.Stock.ToString();
+            txtCodigo.Text = inventario.Codigo;
         }
 
         private async void BtnCrear_Click(object sender, EventArgs e)
@@ -52,7 +60,7 @@ namespace _404_App.Formularios.Acciones
                     Categoria = txtCategoria.Text,
                     Marca = txtMarca.Text,
                     id = txtId.Text,
-                    Codigo = codigo,
+                    Codigo = txtCodigo.Text,
                 };
                 var validar1 = new Inventariovalidator();
                 ValidationResult Resultado1 = validar1.Validate(producto);
@@ -60,18 +68,24 @@ namespace _404_App.Formularios.Acciones
                 {
                     throw new Exception(Resultado1.Errors[0].ToString());
                 }
-                var Result = await Inventario.create_Inventario(new Struct_Inventario
+                var Result = await Inventario.Update_Inventario(new Struct_Inventario
                 {
                     Nombre = producto.Nombre,
                     Precio = producto.Precio,
                     Stock = producto.Stock,
                     Categoria = producto.Categoria,
                     Marca = producto.Marca,
-
-                },Datos.Token);
-                if(Result.status == "Success")
+                    Codigo = producto.Codigo,
+                },Datos.Token,inventario.id);
+                
+                if(Result.status == "success")
                 {
-                    Datos.Inventario.Add(producto);
+                    (from vs in Datos.Inventario where vs.id == producto.id select vs).FirstOrDefault().Codigo = producto.Codigo;
+                    (from vs in Datos.Inventario where vs.id == producto.id select vs).FirstOrDefault().id = producto.id;
+                    (from vs in Datos.Inventario where vs.id == producto.id select vs).FirstOrDefault().Precio = producto.Precio;
+                    (from vs in Datos.Inventario where vs.id == producto.id select vs).FirstOrDefault().Marca = producto.Marca;
+                    (from vs in Datos.Inventario where vs.id == producto.id select vs).FirstOrDefault().Nombre = producto.Nombre;
+                    (from vs in Datos.Inventario where vs.id == producto.id select vs).FirstOrDefault().Stock = producto.Stock;
                     this.DialogResult = DialogResult.OK;
                 }
             }

@@ -87,5 +87,48 @@ namespace _404_App.Formularios
 
             }
         }
+        private void ActualizarDatos()
+        {
+            tabla.DataSource = Datos.Usuarios;
+        }
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tabla.CurrentRow == null)
+                {
+                    throw new Exception("Seleccione un usuario a eliminar");
+                }
+                var dato = (from vs in Datos.Usuarios where vs.id == tabla.CurrentRow.Cells[0].Value.ToString() select vs).FirstOrDefault();
+                if (dato == null)
+                {
+                    throw new Exception("No se encontro referencia");
+                }
+                MenuPrincipal.ActiveForm.Enabled = false;
+                Form ActualizarUsuario = new Form1(dato);
+                var Actualizar = ActualizarUsuario.ShowDialog();
+                if (Actualizar == DialogResult.OK)
+                {
+                    MenuPrincipal.ActiveForm.Enabled = true;
+                    ActualizarDatos();
+                }
+                else
+                {
+                    MenuPrincipal.ActiveForm.Enabled = true;
+                    ActualizarDatos();
+                }
+            }
+            catch (Exception ex)
+            {
+                FrmNotificacionError error = new FrmNotificacionError(ex.Message);
+                error.showAlert();
+            }
+        }
+       
+
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

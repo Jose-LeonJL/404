@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DVStudio.SDK.clases;
 using FluentValidation;
 using FluentValidation.Results;
+using _404_App.Formularios.Acciones;
 
 namespace _404_App.Formularios
 {
@@ -89,6 +90,78 @@ namespace _404_App.Formularios
         private void BtnCrear_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tabla.CurrentRow == null)
+                {
+                    throw new Exception("Seleccione un articulo a eliminar");
+                }
+                var dato = (from vs in Datos.Inventario where vs.id == tabla.CurrentRow.Cells[6].Value.ToString() select vs).FirstOrDefault();
+                if (dato == null)
+                {
+                    throw new Exception("No se encontro referencia");
+                }
+                MenuPrincipal.ActiveForm.Enabled = false;
+                Form ActualizarInventario = new EliminarInventario(dato);
+                var Actualizar = ActualizarInventario.ShowDialog();
+                if (Actualizar == DialogResult.OK)
+                {
+                    MenuPrincipal.ActiveForm.Enabled = true;
+                    ActualizarDatos();
+                }
+                else
+                {
+                    MenuPrincipal.ActiveForm.Enabled = true;
+                    ActualizarDatos();
+                }
+            }
+            catch (Exception ex)
+            {
+                FrmNotificacionError error = new FrmNotificacionError(ex.Message);
+                error.showAlert();
+            }
+        }
+        private void ActualizarDatos()
+        {
+            tabla.DataSource = Datos.Inventario;
+        }
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tabla.CurrentRow == null)
+                {
+                    throw new Exception("Seleccione un articulo a actualizar");
+                }
+                var dato = (from vs in Datos.Inventario where vs.id == tabla.CurrentRow.Cells[6].Value.ToString() select vs).FirstOrDefault();
+                if(dato == null)
+                {
+                    throw new Exception("No se encontro referencia");
+                }
+                MenuPrincipal.ActiveForm.Enabled = false;
+                Form ActualizarInventario = new FrmActualizarInventario(dato);
+                var Actualizar = ActualizarInventario.ShowDialog();
+                if (Actualizar == DialogResult.OK)
+                {
+                    MenuPrincipal.ActiveForm.Enabled = true;
+                    ActualizarDatos();
+                }
+                else
+                {
+                    MenuPrincipal.ActiveForm.Enabled = true;
+                    ActualizarDatos();
+                }
+            }
+            catch(Exception ex)
+            {
+                FrmNotificacionError error = new FrmNotificacionError(ex.Message);
+                error.showAlert();
+            }
+            
         }
     }
 }

@@ -145,7 +145,6 @@ namespace _404_App.Formularios
             {
                 MenuPrincipal.ActiveForm.Enabled = true;
                 ActualizarDatos();
-
             }
         }
         private void ActualizarDatos()
@@ -198,6 +197,11 @@ namespace _404_App.Formularios
                             Productos = g.Key.Productos.ToList()
                         }).ToList();
             tabla.DataSource = dato;
+        }
+
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
