@@ -100,6 +100,7 @@
             this.BtnCancelar.TabIndex = 22;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // EliminarInventario
             // 

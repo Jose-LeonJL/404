@@ -89,10 +89,12 @@ namespace _404_App.Formularios
             if (resultado == DialogResult.OK)
             {
                 MenuPrincipal.ActiveForm.Enabled = true;
+                actualizarDatos();
             }
             else
             {
                 MenuPrincipal.ActiveForm.Enabled = true;
+                actualizarDatos();
 
             }
         }
@@ -135,6 +137,29 @@ namespace _404_App.Formularios
             }
             document.Add(ta);
             document.Close();
+        }
+        private void actualizarDatos()
+        {
+            var dato = (from vs in Datos.Usuarios
+                        group vs by vs into g
+                        select new
+                        {
+                            id = g.Key.id,
+                            Correo = g.Key.Correo,
+                            Codigo = g.Key.Codigo,
+                            Nombre = g.Key.Nombre,
+                            Identidad = g.Key.Identidad,
+                            Sueldo = g.Key.Sueldo,
+                            Telefono = g.Key.Telefono,
+                            Nick = g.Key.Nick,
+                            Tipo = g.Key.Tipo,
+                            Contraseña = g.Key.Contraseña,
+                           
+                            
+                        }
+
+                       ).ToList();
+            tabla.DataSource = dato;
         }
     }
 }
