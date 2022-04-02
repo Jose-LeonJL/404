@@ -1,17 +1,25 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using _404_App.Clases_Validaciones;
 using System.Windows.Forms;
 using DVStudio.SDK.clases;
 using FluentValidation;
 using FluentValidation.Results;
-using _404_App.Clases_Validaciones;
+using iText.Kernel.Pdf;
+using Microsoft.VisualBasic.FileIO;
+using iText.Layout;
+using iText.Kernel.Geom;
+using iText.Layout.Element;
+using iText.Kernel.Font;
+using iText.IO.Font.Constants;
+using iText.Layout.Properties;
 using _404_App.Formularios.Acciones;
-using System.Threading.Tasks;
 
 namespace _404_App.Formularios
 {
@@ -197,6 +205,46 @@ namespace _404_App.Formularios
                             Productos = g.Key.Productos.ToList()
                         }).ToList();
             tabla.DataSource = dato;
+        }
+
+        private void BtnReporte_Click(object sender, EventArgs e)
+        {
+            var directorio = System.IO.Path.Combine(SpecialDirectories.MyDocuments, "404");
+            if (!Directory.Exists(directorio))
+            {
+                Directory.CreateDirectory(directorio);
+            }
+            var pdfdir = System.IO.Path.Combine(SpecialDirectories.MyDocuments, "404", $"Reporte-Ventas-{DateTime.Now.Day}-{DateTime.Now.Month}-{DateTime.Now.Year}.pdf");
+            PdfWriter pdfwrite = new PdfWriter(pdfdir);
+            PdfDocument pdf = new PdfDocument(pdfwrite);
+            Document document = new Document(pdf, PageSize.LETTER);
+
+            document.SetMargins(60, 20, 55, 20);
+
+            PdfFont fontCulumna = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+            PdfFont fontcontent = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+
+            float[] tamanios = { 1, 1, 1, 1, 1, 1 };
+            Table ta = new Table(UnitValue.CreatePercentArray(tamanios));
+            ta.SetWidth(UnitValue.CreatePercentValue(100));
+            ta.AddHeaderCell(new Cell().Add(new Paragraph("Codigo").SetFont(fontCulumna)));
+            ta.AddHeaderCell(new Cell().Add(new Paragraph("Fecha").SetFont(fontCulumna)));
+            ta.AddHeaderCell(new Cell().Add(new Paragraph("Cliente").SetFont(fontCulumna)));
+            ta.AddHeaderCell(new Cell().Add(new Paragraph("Empleado").SetFont(fontCulumna)));
+            ta.AddHeaderCell(new Cell().Add(new Paragraph("ISV").SetFont(fontCulumna)));
+            ta.AddHeaderCell(new Cell().Add(new Paragraph("Total").SetFont(fontCulumna)));
+
+            foreach (var producto in Datos.Ventas)
+            {
+                ta.AddCell(new Cell().Add(new Paragraph(producto.Codigo)).SetFont(fontcontent));
+                ta.AddCell(new Cell().Add(new Paragraph(producto.Fecha)).SetFont(fontcontent));
+                ta.AddCell(new Cell().Add(new Paragraph(producto.Cliente.Nombre)).SetFont(fontcontent));
+                ta.AddCell(new Cell().Add(new Paragraph(producto.Empleado.Nombre)).SetFont(fontcontent));
+                ta.AddCell(new Cell().Add(new Paragraph(producto.IVS.ToString())).SetFont(fontcontent));
+                ta.AddCell(new Cell().Add(new Paragraph(producto.Total.ToString())).SetFont(fontcontent));
+            }
+            document.Add(ta);
+            document.Close();
         }
 
         private void BtnActualizar_Click(object sender, EventArgs e)

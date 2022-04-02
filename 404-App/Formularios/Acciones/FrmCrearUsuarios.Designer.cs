@@ -125,6 +125,7 @@ namespace _404_App.Formularios.Acciones
             this.BtnCrear.TabIndex = 22;
             this.BtnCrear.Text = "Crear";
             this.BtnCrear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnCrear.Click += new System.EventHandler(this.BtnCrear_Click);
             // 
             // txtCodigo
             // 
@@ -137,6 +138,7 @@ namespace _404_App.Formularios.Acciones
             this.txtCodigo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtCodigo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtCodigo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCodigo.Enabled = false;
             this.txtCodigo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(174)))), ((int)(((byte)(181)))));
             this.txtCodigo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -181,6 +183,7 @@ namespace _404_App.Formularios.Acciones
             this.txtIdentidad.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtIdentidad.TabIndex = 25;
             this.txtIdentidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtIdentidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdentidad_KeyPress);
             // 
             // txtNombre
             // 
@@ -349,6 +352,7 @@ namespace _404_App.Formularios.Acciones
             this.txtTelefono.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtTelefono.TabIndex = 31;
             this.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // CmbTipo
             // 
