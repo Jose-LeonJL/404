@@ -245,6 +245,7 @@ namespace _404_App.Formularios
             this.BtnReporte.TabIndex = 6;
             this.BtnReporte.Text = "Reporte";
             this.BtnReporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
             // 
             // BtnEliminar
             // 

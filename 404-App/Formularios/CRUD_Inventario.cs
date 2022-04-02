@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +11,14 @@ using System.Windows.Forms;
 using DVStudio.SDK.clases;
 using FluentValidation;
 using FluentValidation.Results;
+using iText.Kernel.Pdf;
+using Microsoft.VisualBasic.FileIO;
+using iText.Layout;
+using iText.Kernel.Geom;
+using iText.Layout.Element;
+using iText.Kernel.Font;
+using iText.IO.Font.Constants;
+using iText.Layout.Properties;
 
 namespace _404_App.Formularios
 {
@@ -89,6 +98,46 @@ namespace _404_App.Formularios
         private void BtnCrear_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnReporte_Click(object sender, EventArgs e)
+        {
+            var directorio = System.IO.Path.Combine(SpecialDirectories.MyDocuments, "404");
+            if (!Directory.Exists(directorio))
+            {
+                Directory.CreateDirectory(directorio);
+            }
+            var pdfdir = System.IO.Path.Combine(SpecialDirectories.MyDocuments, "404",$"Reporte-Inventario-{DateTime.Now.Day}-{DateTime.Now.Month}-{DateTime.Now.Year}.pdf");
+            PdfWriter pdfwrite = new PdfWriter(pdfdir);
+            PdfDocument pdf = new PdfDocument(pdfwrite);
+            Document document = new Document(pdf, PageSize.LETTER);
+
+            document.SetMargins(60, 20, 55, 20);
+
+            PdfFont fontCulumna = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+            PdfFont fontcontent = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+
+            float[] tamanios = { 1, 1, 1, 1, 1, 1 };
+            Table ta = new Table(UnitValue.CreatePercentArray(tamanios));
+            ta.SetWidth(UnitValue.CreatePercentValue(100));
+            ta.AddHeaderCell(new Cell().Add(new Paragraph("Codigo").SetFont(fontCulumna)));
+            ta.AddHeaderCell(new Cell().Add(new Paragraph("Nombre").SetFont(fontCulumna)));
+            ta.AddHeaderCell(new Cell().Add(new Paragraph("Precio").SetFont(fontCulumna)));
+            ta.AddHeaderCell(new Cell().Add(new Paragraph("Stock").SetFont(fontCulumna)));
+            ta.AddHeaderCell(new Cell().Add(new Paragraph("Categoria").SetFont(fontCulumna)));
+            ta.AddHeaderCell(new Cell().Add(new Paragraph("Marca").SetFont(fontCulumna)));
+            
+            foreach(var producto in Datos.Inventario)
+            {
+                ta.AddCell(new Cell().Add(new Paragraph(producto.Codigo)).SetFont(fontcontent));
+                ta.AddCell(new Cell().Add(new Paragraph(producto.Nombre)).SetFont(fontcontent));
+                ta.AddCell(new Cell().Add(new Paragraph(producto.Precio.ToString())).SetFont(fontcontent));
+                ta.AddCell(new Cell().Add(new Paragraph(producto.Stock.ToString())).SetFont(fontcontent));
+                ta.AddCell(new Cell().Add(new Paragraph(producto.Categoria)).SetFont(fontcontent));
+                ta.AddCell(new Cell().Add(new Paragraph(producto.Marca)).SetFont(fontcontent));
+            }
+            document.Add(ta);
+            document.Close();
         }
     }
 }
