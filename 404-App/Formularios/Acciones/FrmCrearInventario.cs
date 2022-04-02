@@ -37,6 +37,7 @@ namespace _404_App.Formularios.Acciones
         {
             InitializeComponent();
             codigo = System.Guid.NewGuid().ToString();
+            txtId.Text = codigo;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
@@ -44,6 +45,15 @@ namespace _404_App.Formularios.Acciones
         {
             try
             {
+                Int32 i;
+                if (!Int32.TryParse(txtPrecio.Text,out i))
+                {
+                    throw new Exception("Ingrese numeros en el campo de precio.");
+                }
+                if (!Int32.TryParse(txtStock.Text, out i))
+                {
+                    throw new Exception("Ingrese numeros en el campo de Stock.");
+                }
                 var producto = new Clases_Validaciones.ClaseInventario
                 {
                     Nombre = txtNombre.Text,
@@ -51,7 +61,7 @@ namespace _404_App.Formularios.Acciones
                     Stock = Int32.Parse(txtStock.Text),
                     Categoria = txtCategoria.Text,
                     Marca = txtMarca.Text,
-                    id = txtId.Text,
+                    id = System.Guid.NewGuid().ToString(),
                     Codigo = codigo,
                 };
                 var validar1 = new Inventariovalidator();
@@ -67,9 +77,9 @@ namespace _404_App.Formularios.Acciones
                     Stock = producto.Stock,
                     Categoria = producto.Categoria,
                     Marca = producto.Marca,
-
+                    Codigo = producto.Codigo
                 },Datos.Token);
-                if(Result.status == "Success")
+                if(Result.status == "success")
                 {
                     Datos.Inventario.Add(producto);
                     this.DialogResult = DialogResult.OK;
@@ -78,11 +88,13 @@ namespace _404_App.Formularios.Acciones
 
             catch (ExceptionsResponse ex)
             {
+                Console.WriteLine("error en la api");
                 var error = new FrmNotificacionError(ex.data.error);
                 error.showAlert();
             }
             catch (Exception ex)
             {
+                Console.WriteLine("error no de la api");
                 var error = new FrmNotificacionError(ex.Message);
                 error.showAlert();
             }
@@ -91,6 +103,30 @@ namespace _404_App.Formularios.Acciones
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.ToString() == "1" | e.KeyChar.ToString() == "2" | e.KeyChar.ToString() == "3" | e.KeyChar.ToString() == "4" | e.KeyChar.ToString() == "5" | e.KeyChar.ToString() == "6" | e.KeyChar.ToString() == "7" | e.KeyChar.ToString() == "8" | e.KeyChar.ToString() == "9" | e.KeyChar.ToString() == "0" | e.KeyChar == Convert.ToChar(Keys.Delete) | e.KeyChar == Convert.ToChar(Keys.Back))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtStock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.ToString() == "1" | e.KeyChar.ToString() == "2" | e.KeyChar.ToString() == "3" | e.KeyChar.ToString() == "4" | e.KeyChar.ToString() == "5" | e.KeyChar.ToString() == "6" | e.KeyChar.ToString() == "7" | e.KeyChar.ToString() == "8" | e.KeyChar.ToString() == "9" | e.KeyChar.ToString() == "0" | e.KeyChar == Convert.ToChar(Keys.Delete) | e.KeyChar == Convert.ToChar(Keys.Back))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

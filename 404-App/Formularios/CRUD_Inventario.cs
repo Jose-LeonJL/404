@@ -19,6 +19,7 @@ using iText.Layout.Element;
 using iText.Kernel.Font;
 using iText.IO.Font.Constants;
 using iText.Layout.Properties;
+using _404_App.Formularios.Acciones;
 
 namespace _404_App.Formularios
 {
@@ -97,7 +98,25 @@ namespace _404_App.Formularios
 
         private void BtnCrear_Click(object sender, EventArgs e)
         {
+            MenuPrincipal.ActiveForm.Enabled = false;
+            var crear = new FrmCrearInventario();
+            var resultado = crear.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                MenuPrincipal.ActiveForm.Enabled = true;
+                ActualizarDatos();
+            }
+            else
+            {
+                MenuPrincipal.ActiveForm.Enabled = true;
+                ActualizarDatos();
 
+            }
+        }
+
+        private void ActualizarDatos()
+        {
+            tabla.DataSource = Datos.Inventario;
         }
 
         private void BtnReporte_Click(object sender, EventArgs e)

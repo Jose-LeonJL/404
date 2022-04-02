@@ -173,6 +173,7 @@
             this.txtPrecio.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtPrecio.TabIndex = 18;
             this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // txtStock
             // 
@@ -201,6 +202,7 @@
             this.txtStock.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtStock.TabIndex = 19;
             this.txtStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
             // 
             // BtnCrear
             // 
@@ -273,6 +275,7 @@
             this.txtId.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtId.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtId.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtId.Enabled = false;
             this.txtId.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(174)))), ((int)(((byte)(181)))));
             this.txtId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -283,7 +286,7 @@
             this.txtId.Name = "txtId";
             this.txtId.PasswordChar = '\0';
             this.txtId.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtId.PlaceholderText = "Id";
+            this.txtId.PlaceholderText = "Codigo";
             this.txtId.SelectedText = "";
             this.txtId.Size = new System.Drawing.Size(395, 43);
             this.txtId.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
