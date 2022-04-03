@@ -1,4 +1,5 @@
 ﻿
+using FontAwesome.Sharp;
 namespace _404_App.Formularios
 {
     partial class FrmNotificacionEXito
@@ -67,7 +68,7 @@ namespace _404_App.Formularios
             this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(143)))), ((int)(((byte)(57)))));
             this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
             this.iconPictureBox2.IconColor = System.Drawing.Color.White;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+
             this.iconPictureBox2.IconSize = 80;
             this.iconPictureBox2.Location = new System.Drawing.Point(3, 12);
             this.iconPictureBox2.Name = "iconPictureBox2";

@@ -5,11 +5,6 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "404-SDK", "404-SDK\404-SDK.csproj", "{DFC75EBB-D660-4526-A059-5A57EB81DD08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "404-App", "404-App\404-App.csproj", "{F2725EAB-A666-4F16-8B51-D9B5FB770312}"
-	ProjectSection(ProjectDependencies) = postProject
-		{1F61765C-7993-4B8C-9202-0DDDBFACDCF7} = {1F61765C-7993-4B8C-9202-0DDDBFACDCF7}
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProjecta", "TestProjecta\TestProjecta.csproj", "{E28115AF-E9E8-413E-A270-C2EBEEA9EE6F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testsdks", "testsdks\testsdks.csproj", "{0E2347E9-C012-489D-B181-59940DC007D7}"
@@ -18,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testsdks", "testsdks\testsd
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "404-SDK-2022", "404-SDK-2022\404-SDK-2022.csproj", "{1F61765C-7993-4B8C-9202-0DDDBFACDCF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "404-App", "404-App\404-App.csproj", "{F2725EAB-A666-4F16-8B51-D9B5FB770312}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +26,6 @@ Global
 		{DFC75EBB-D660-4526-A059-5A57EB81DD08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFC75EBB-D660-4526-A059-5A57EB81DD08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFC75EBB-D660-4526-A059-5A57EB81DD08}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F2725EAB-A666-4F16-8B51-D9B5FB770312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F2725EAB-A666-4F16-8B51-D9B5FB770312}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F2725EAB-A666-4F16-8B51-D9B5FB770312}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F2725EAB-A666-4F16-8B51-D9B5FB770312}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E28115AF-E9E8-413E-A270-C2EBEEA9EE6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E28115AF-E9E8-413E-A270-C2EBEEA9EE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E28115AF-E9E8-413E-A270-C2EBEEA9EE6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +38,10 @@ Global
 		{1F61765C-7993-4B8C-9202-0DDDBFACDCF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F61765C-7993-4B8C-9202-0DDDBFACDCF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F61765C-7993-4B8C-9202-0DDDBFACDCF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2725EAB-A666-4F16-8B51-D9B5FB770312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2725EAB-A666-4F16-8B51-D9B5FB770312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2725EAB-A666-4F16-8B51-D9B5FB770312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2725EAB-A666-4F16-8B51-D9B5FB770312}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
