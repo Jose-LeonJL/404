@@ -20,6 +20,8 @@ using iText.Kernel.Font;
 using iText.IO.Font.Constants;
 using iText.Layout.Properties;
 using _404_App.Formularios.Acciones;
+using iText.IO.Image;
+using System.Threading.Tasks;
 
 namespace _404_App.Formularios
 {
@@ -198,45 +200,94 @@ namespace _404_App.Formularios
             }
         }
 
-        private void BtnReporte_Click(object sender, EventArgs e)
+        private async void BtnReporte_Click(object sender, EventArgs e)
         {
+            FrmNotificacionEXito eXito = new FrmNotificacionEXito("Creando reporte...");
+            eXito.showAlert();
             var directorio = System.IO.Path.Combine(SpecialDirectories.MyDocuments, "404");
             if (!Directory.Exists(directorio))
             {
                 Directory.CreateDirectory(directorio);
             }
             var pdfdir = System.IO.Path.Combine(SpecialDirectories.MyDocuments, "404",$"Reporte-Inventario-{DateTime.Now.Day}-{DateTime.Now.Month}-{DateTime.Now.Year}.pdf");
-            PdfWriter pdfwrite = new PdfWriter(pdfdir);
-            PdfDocument pdf = new PdfDocument(pdfwrite);
-            Document document = new Document(pdf, PageSize.LETTER);
 
-            document.SetMargins(60, 20, 55, 20);
-
-            PdfFont fontCulumna = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
-            PdfFont fontcontent = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
-
-            float[] tamanios = { 1, 1, 1, 1, 1, 1 };
-            Table ta = new Table(UnitValue.CreatePercentArray(tamanios));
-            ta.SetWidth(UnitValue.CreatePercentValue(100));
-            ta.AddHeaderCell(new Cell().Add(new Paragraph("Codigo").SetFont(fontCulumna)));
-            ta.AddHeaderCell(new Cell().Add(new Paragraph("Nombre").SetFont(fontCulumna)));
-            ta.AddHeaderCell(new Cell().Add(new Paragraph("Precio").SetFont(fontCulumna)));
-            ta.AddHeaderCell(new Cell().Add(new Paragraph("Stock").SetFont(fontCulumna)));
-            ta.AddHeaderCell(new Cell().Add(new Paragraph("Categoria").SetFont(fontCulumna)));
-            ta.AddHeaderCell(new Cell().Add(new Paragraph("Marca").SetFont(fontCulumna)));
-            
-            foreach(var producto in Datos.Inventario)
+            Action task1 = (() =>
             {
-                ta.AddCell(new Cell().Add(new Paragraph(producto.Codigo)).SetFont(fontcontent));
-                ta.AddCell(new Cell().Add(new Paragraph(producto.Nombre)).SetFont(fontcontent));
-                ta.AddCell(new Cell().Add(new Paragraph(producto.Precio.ToString())).SetFont(fontcontent));
-                ta.AddCell(new Cell().Add(new Paragraph(producto.Stock.ToString())).SetFont(fontcontent));
-                ta.AddCell(new Cell().Add(new Paragraph(producto.Categoria)).SetFont(fontcontent));
-                ta.AddCell(new Cell().Add(new Paragraph(producto.Marca)).SetFont(fontcontent));
-            }
-            document.Add(ta);
-            document.Close();
-            FrmNotificacionEXito eXito = new FrmNotificacionEXito("Se genero el reporte!!!");
+                using (PdfWriter pdfwrite = new PdfWriter(pdfdir))
+                using (PdfDocument pdf = new PdfDocument(pdfwrite))
+                using (Document document = new Document(pdf, PageSize.LETTER))
+                {
+                    document.SetMargins(70, 20, 55, 20);
+                    PdfFont fontCulumna = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+                    PdfFont fontcontent = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+
+                    float[] tamanios = { 1, 1, 1, 1, 1, 1 };
+                    Table ta = new Table(UnitValue.CreatePercentArray(tamanios));
+                    ta.SetWidth(UnitValue.CreatePercentValue(100));
+                    ta.AddHeaderCell(new Cell().Add(new Paragraph("Codigo").SetFont(fontCulumna)));
+                    ta.AddHeaderCell(new Cell().Add(new Paragraph("Nombre").SetFont(fontCulumna)));
+                    ta.AddHeaderCell(new Cell().Add(new Paragraph("Precio").SetFont(fontCulumna)));
+                    ta.AddHeaderCell(new Cell().Add(new Paragraph("Stock").SetFont(fontCulumna)));
+                    ta.AddHeaderCell(new Cell().Add(new Paragraph("Categoria").SetFont(fontCulumna)));
+                    ta.AddHeaderCell(new Cell().Add(new Paragraph("Marca").SetFont(fontCulumna)));
+
+                    foreach (var producto in Datos.Inventario)
+                    {
+                        ta.AddCell(new Cell().Add(new Paragraph(producto.Codigo)).SetFont(fontcontent));
+                        ta.AddCell(new Cell().Add(new Paragraph(producto.Nombre)).SetFont(fontcontent));
+                        ta.AddCell(new Cell().Add(new Paragraph(producto.Precio.ToString())).SetFont(fontcontent));
+                        ta.AddCell(new Cell().Add(new Paragraph(producto.Stock.ToString())).SetFont(fontcontent));
+                        ta.AddCell(new Cell().Add(new Paragraph(producto.Categoria)).SetFont(fontcontent));
+                        ta.AddCell(new Cell().Add(new Paragraph(producto.Marca)).SetFont(fontcontent));
+                    }
+                    document.Add(ta);
+                }
+            });
+
+            Action task2 = (() =>
+            {
+                var LogoPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "DVStudio.png");
+                var logo = new iText.Layout.Element.Image(ImageDataFactory.Create(LogoPath)).SetWidth(50);
+                var plogo = new Paragraph("").Add(logo);
+                var titulo = new Paragraph("Reporte de Inventario");
+                titulo.SetTextAlignment(TextAlignment.CENTER);
+                titulo.SetFontSize(12);
+                var fecha = new Paragraph($"Fecha: {DateTime.Now.ToString("dd-MM-yyyy")}");
+                fecha.SetFontSize(12);
+                var pdfreader = new PdfReader(pdfdir);
+                var pdfwritter = new PdfWriter(pdfdir + "x.pdf");
+                using (PdfDocument pdfDoc = new PdfDocument(pdfreader, pdfwritter))
+                using (Document doc = new Document(pdfDoc))
+                {
+                    var paginas = pdfDoc.GetNumberOfPages();
+                    for (int i = 1; i <= paginas; i++)
+                    {
+                        var p = pdfDoc.GetPage(i);
+                        float y = (pdfDoc.GetPage(i).GetPageSize().GetTop() - 15);
+                        doc.ShowTextAligned(plogo, 40, y, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
+                        doc.ShowTextAligned(titulo, 150, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
+                        doc.ShowTextAligned(fecha, 520, y - 15, i, TextAlignment.CENTER, VerticalAlignment.TOP, 0);
+
+                    }
+                }
+            });
+
+            Action task3 = () =>
+            {
+                var pdfreader = new PdfReader(pdfdir + "x.pdf");
+                var pdfwritter = new PdfWriter(pdfdir);
+                using (PdfDocument pdfDoc = new PdfDocument(pdfreader, pdfwritter))
+                using (Document doc = new Document(pdfDoc))
+                {
+                }
+                File.Delete(pdfdir + "x.pdf");
+            };
+            await Task.Run(task1);
+            await Task.Run(task2);
+            await Task.Run(task3);
+
+
+            eXito = new FrmNotificacionEXito("Se genero el reporte!!!");
             eXito.showAlert();
         }
     }
