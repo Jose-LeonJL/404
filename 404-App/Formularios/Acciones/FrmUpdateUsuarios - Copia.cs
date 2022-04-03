@@ -56,6 +56,11 @@ namespace _404_App.Formularios.Acciones
         {
             try
             {
+                int x;
+                if (!Int32.TryParse(txtSueldo.Text, out x))
+                {
+                    throw new Exception("Ingrese digitos validos en el campo de sueldo");
+                }
                 var usuario = new Clases_Validaciones.ClaseUsuarios
                 {
                     id = System.Guid.NewGuid().ToString(),
@@ -169,6 +174,18 @@ namespace _404_App.Formularios.Acciones
                     txtTelefono.AppendText("-");
                 }
 
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSueldo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.ToString() == "1" | e.KeyChar.ToString() == "2" | e.KeyChar.ToString() == "3" | e.KeyChar.ToString() == "4" | e.KeyChar.ToString() == "5" | e.KeyChar.ToString() == "6" | e.KeyChar.ToString() == "7" | e.KeyChar.ToString() == "8" | e.KeyChar.ToString() == "9" | e.KeyChar.ToString() == "0" | e.KeyChar == Convert.ToChar(Keys.Delete) | e.KeyChar == Convert.ToChar(Keys.Back))
+            {
+                e.Handled = false;
             }
             else
             {

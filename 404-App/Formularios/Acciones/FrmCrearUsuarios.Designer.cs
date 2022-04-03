@@ -324,6 +324,7 @@ namespace _404_App.Formularios.Acciones
             this.txtSueldo.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtSueldo.TabIndex = 30;
             this.txtSueldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSueldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSueldo_KeyPress);
             // 
             // txtTelefono
             // 

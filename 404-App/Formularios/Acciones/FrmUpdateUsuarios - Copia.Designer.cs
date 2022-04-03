@@ -324,6 +324,7 @@ namespace _404_App.Formularios.Acciones
             this.txtSueldo.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtSueldo.TabIndex = 30;
             this.txtSueldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSueldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSueldo_KeyPress);
             // 
             // txtTelefono
             // 
@@ -366,7 +367,7 @@ namespace _404_App.Formularios.Acciones
             this.CmbTipo.TabIndex = 32;
             this.CmbTipo.Text = "Seleccionar...";
             // 
-            // FrmCrearUsuarios
+            // FrmupdateUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -387,7 +388,7 @@ namespace _404_App.Formularios.Acciones
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LblName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmCrearUsuarios";
+            this.Name = "FrmupdateUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCrearUsuarios";
             this.ResumeLayout(false);

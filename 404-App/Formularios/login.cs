@@ -176,5 +176,13 @@ namespace _404_App.Formularios
         {
             txtPassword.UseSystemPasswordChar = true;
         }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                BtnLogin_Click(sender, e);
+            }
+        }
     }
 }

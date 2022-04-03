@@ -262,6 +262,7 @@ namespace _404_App.Formularios
             this.txtPassword.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtPassword.TabIndex = 12;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // txtUser
             // 
