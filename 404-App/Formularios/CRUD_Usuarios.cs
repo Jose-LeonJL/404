@@ -90,6 +90,8 @@ namespace _404_App.Formularios
             {
                 MenuPrincipal.ActiveForm.Enabled = true;
                 actualizarDatos();
+                FrmNotificacionEXito eXito = new FrmNotificacionEXito("Se creo el nuevo registro!!!");
+                eXito.showAlert();
             }
             else
             {
@@ -137,6 +139,8 @@ namespace _404_App.Formularios
             }
             document.Add(ta);
             document.Close();
+            FrmNotificacionEXito eXito = new FrmNotificacionEXito("Se creo el reporte!!!");
+            eXito.showAlert();
         }
         private void actualizarDatos()
         {
@@ -185,6 +189,8 @@ namespace _404_App.Formularios
                 {
                     MenuPrincipal.ActiveForm.Enabled = true;
                     ActualizarDatos();
+                    FrmNotificacionEXito eXito = new FrmNotificacionEXito("Se elimino el registro!!!");
+                    eXito.showAlert();
                 }
                 else
                 {
@@ -202,7 +208,38 @@ namespace _404_App.Formularios
 
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (tabla.CurrentRow == null)
+                {
+                    throw new Exception("Seleccione un usuario para actualizar");
+                }
+                var dato = (from vs in Datos.Usuarios where vs.id == tabla.CurrentRow.Cells[0].Value.ToString() select vs).FirstOrDefault();
+                if (dato == null)
+                {
+                    throw new Exception("No se encontro referencia");
+                }
+                MenuPrincipal.ActiveForm.Enabled = false;
+                Form ActualizarUsuario = new FrmupdateUsuarios(dato);
+                var Actualizar = ActualizarUsuario.ShowDialog();
+                if (Actualizar == DialogResult.OK)
+                {
+                    MenuPrincipal.ActiveForm.Enabled = true;
+                    ActualizarDatos();
+                    FrmNotificacionEXito eXito = new FrmNotificacionEXito("Se actualizo registro!!!");
+                    eXito.showAlert();
+                }
+                else
+                {
+                    MenuPrincipal.ActiveForm.Enabled = true;
+                    ActualizarDatos();
+                }
+            }
+            catch (Exception ex)
+            {
+                FrmNotificacionError error = new FrmNotificacionError(ex.Message);
+                error.showAlert();
+            }
         }
     }
 }

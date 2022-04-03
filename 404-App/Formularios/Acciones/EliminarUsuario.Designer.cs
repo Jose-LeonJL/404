@@ -35,13 +35,13 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 41);
+            this.label1.Location = new System.Drawing.Point(-1, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 58);
+            this.label1.Size = new System.Drawing.Size(379, 89);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Estas Seguro De Eliminar\r\n           el Usuario?";
+            this.label1.Text = "Estas Seguro De Eliminar \r\nel Usuario?";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BtnCrear
             // 
@@ -59,7 +59,7 @@
             this.BtnCrear.ForeColor = System.Drawing.Color.Black;
             this.BtnCrear.Image = null;
             this.BtnCrear.ImageSize = new System.Drawing.Size(40, 40);
-            this.BtnCrear.Location = new System.Drawing.Point(12, 184);
+            this.BtnCrear.Location = new System.Drawing.Point(12, 202);
             this.BtnCrear.Name = "BtnCrear";
             this.BtnCrear.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.BtnCrear.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -89,7 +89,7 @@
             this.BtnCancelar.ForeColor = System.Drawing.Color.Black;
             this.BtnCancelar.Image = null;
             this.BtnCancelar.ImageSize = new System.Drawing.Size(40, 40);
-            this.BtnCancelar.Location = new System.Drawing.Point(230, 184);
+            this.BtnCancelar.Location = new System.Drawing.Point(240, 197);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.BtnCancelar.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -117,7 +117,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

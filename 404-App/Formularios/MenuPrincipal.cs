@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using _404_App.Libs;
+using System.Diagnostics;
 
 namespace _404_App.Formularios
 {
@@ -104,6 +105,11 @@ namespace _404_App.Formularios
         private void PnBar_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

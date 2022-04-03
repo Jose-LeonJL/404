@@ -10,15 +10,28 @@ using System.Windows.Forms;
 using DVStudio.SDK.clases;
 using DVStudio.SDK.Exceptions;
 using _404_App.Clases_Validaciones;
+using System.Runtime.InteropServices;
 
 namespace _404_App.Formularios.Acciones
 {
     public partial class Form1 : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+        private static extern IntPtr CreateRoundRectRgn
+          (
+          int nLeftRect,
+          int nTopRect,
+          int RightRect,
+          int nBottomRect,
+          int nWidthEllipse,
+          int nHeightEllipse
+          );
         private ClaseUsuarios usuario1;
         public Form1(ClaseUsuarios usuario)
         {
             InitializeComponent();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             this.usuario1 = usuario;
         }
 

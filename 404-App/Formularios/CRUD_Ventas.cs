@@ -148,6 +148,8 @@ namespace _404_App.Formularios
             {
                 MenuPrincipal.ActiveForm.Enabled = true;
                 ActualizarDatos();
+                FrmNotificacionEXito eXito = new FrmNotificacionEXito("Se creo el nuevo registro!!!");
+                eXito.showAlert();
             }
             else
             {
@@ -245,9 +247,16 @@ namespace _404_App.Formularios
             }
             document.Add(ta);
             document.Close();
+            FrmNotificacionEXito eXito = new FrmNotificacionEXito("Se genero el reporte!!!");
+            eXito.showAlert();
         }
 
         private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
         {
 
         }

@@ -219,6 +219,7 @@ namespace _404_App.Formularios
             this.BtnEliminar.BorderSize = 3;
             this.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEliminar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BtnEliminar.Enabled = false;
             this.BtnEliminar.FocusedColor = System.Drawing.Color.Empty;
             this.BtnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEliminar.ForeColor = System.Drawing.Color.Black;
@@ -249,6 +250,7 @@ namespace _404_App.Formularios
             this.BtnActualizar.BorderSize = 3;
             this.BtnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnActualizar.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BtnActualizar.Enabled = false;
             this.BtnActualizar.FocusedColor = System.Drawing.Color.Empty;
             this.BtnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnActualizar.ForeColor = System.Drawing.Color.Black;

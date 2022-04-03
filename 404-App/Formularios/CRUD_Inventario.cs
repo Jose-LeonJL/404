@@ -98,7 +98,29 @@ namespace _404_App.Formularios
 
         private void BtnCrear_Click(object sender, EventArgs e)
         {
+            try
+            {
+                MenuPrincipal.ActiveForm.Enabled = false;
+                var frmcrear = new FrmCrearInventario();
+                var result = frmcrear.ShowDialog();
+                if(result == DialogResult.OK)
+                {
 
+                    ActualizarDatos();
+                    FrmNotificacionEXito eXito = new FrmNotificacionEXito("Se creo el nuevo registro!!!");
+                    eXito.showAlert();
+                }
+                else
+                {
+
+                    ActualizarDatos();
+                }
+                MenuPrincipal.ActiveForm.Enabled = true;
+            }catch(Exception ex)
+            {
+                FrmNotificacionError error = new FrmNotificacionError(ex.Message);
+                error.showAlert();
+            }
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
@@ -121,6 +143,8 @@ namespace _404_App.Formularios
                 {
                     MenuPrincipal.ActiveForm.Enabled = true;
                     ActualizarDatos();
+                    FrmNotificacionEXito eXito = new FrmNotificacionEXito("Se elimino el registro!!!");
+                    eXito.showAlert();
                 }
                 else
                 {
@@ -158,6 +182,8 @@ namespace _404_App.Formularios
                 {
                     MenuPrincipal.ActiveForm.Enabled = true;
                     ActualizarDatos();
+                    FrmNotificacionEXito eXito = new FrmNotificacionEXito("Se actualizo el registro!!!");
+                    eXito.showAlert();
                 }
                 else
                 {
@@ -169,21 +195,6 @@ namespace _404_App.Formularios
             {
                 FrmNotificacionError error = new FrmNotificacionError(ex.Message);
                 error.showAlert();
-            }
-            
-            MenuPrincipal.ActiveForm.Enabled = false;
-            var crear = new FrmCrearInventario();
-            var resultado = crear.ShowDialog();
-            if (resultado == DialogResult.OK)
-            {
-                MenuPrincipal.ActiveForm.Enabled = true;
-                ActualizarDatos();
-            }
-            else
-            {
-                MenuPrincipal.ActiveForm.Enabled = true;
-                ActualizarDatos();
-
             }
         }
 
@@ -225,6 +236,8 @@ namespace _404_App.Formularios
             }
             document.Add(ta);
             document.Close();
+            FrmNotificacionEXito eXito = new FrmNotificacionEXito("Se genero el reporte!!!");
+            eXito.showAlert();
         }
     }
 }
